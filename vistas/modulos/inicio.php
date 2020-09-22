@@ -50,7 +50,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">SÁBADO FEST</h1>
+            <h1 class="mb-5"><?php echo($_SESSION["codigoseta"])?></h1>
           </div>
         </div>
       </div>
@@ -138,8 +138,13 @@
 
       <div class="form-group has-feedback">
 
-        <input type="text" class="form-control" placeholder="Código" name="codigo" required>
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        <input type="text" class="form-control" placeholder="Identificacion" name="identificacion" required>
+        <input type="text" class="form-control" placeholder="Nombres" name="nombres" required>
+        <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" required>
+        <input type="text" class="form-control" placeholder="Número de celular" name="celular" required>
+        <input type="text" class="form-control" placeholder="Número de cédula" name="cedula" required>
+        <input type="text" class="form-control" placeholder="Municipio" name="municipio" required>
+        <input type="text" class="form-control" placeholder="Correo Electrónico" name="email" required>
 
       </div>
 
@@ -156,7 +161,7 @@
       <?php
 
         $login = new ControladorUsuarios();
-        $login -> ctrIngresoUsuario();
+        $login -> ctrActualizacionDatos();
         
       ?>
 
