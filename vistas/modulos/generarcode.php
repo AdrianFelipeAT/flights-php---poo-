@@ -4,15 +4,14 @@
 	require_once "../../constantes.php";
 
 	$valor = "";
-	$algo = "dd";
-	$stmt = Conexion::conectar()->prepare("SELECT * FROM codigo where vendido = 0 and codigo != '".$codetestsc."' ORDER BY RAND() limit 1");
+	$stmt = Conexion::conectar()->prepare("SELECT * FROM codigos where asignado = 0 and codigoacceso != '".$codetestsc."' ORDER BY RAND() limit 1");
 
 	$stmt -> execute();
 
 	//return $stmt -> fetch();
 
 	while($assoc_query = $stmt -> fetch()){
-		$valor = $assoc_query['codigo'];
+		$valor = $assoc_query['codigoacceso'];
 	}
 	
 	echo $valor;

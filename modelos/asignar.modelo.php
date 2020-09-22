@@ -8,13 +8,12 @@ class ModeloAsignacion{
 	MOSTRAR USUARIOS
 	=============================================*/
 
-	static public function mdlAsignarCodigo($identificacion, $codigo){
+	static public function mdlAsignarCodigo($codigo){
 
-		if($identificacion != null and $codigo != null){
+		if($codigo != null){
 
-			$stmt = Conexion::conectar()->prepare("UPDATE codigo set vendido = 1, identificacion = :identificacion WHERE codigo = :codigo");
+			$stmt = Conexion::conectar()->prepare("UPDATE codigos set asignado = 1 WHERE codigoacceso = :codigo");
 
-			$stmt -> bindParam(":identificacion", $identificacion, PDO::PARAM_STR);
 			$stmt -> bindParam(":codigo", $codigo, PDO::PARAM_STR);
 
 			if($stmt -> execute()){
@@ -70,7 +69,7 @@ class ModeloAsignacion{
 
 	static public function mdlTerminarSesion($tabla, $item, $valor){
 	
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET n_ingreso = 0 WHERE $item = :valor");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET generado = 0 WHERE $item = :valor");
 
 		$stmt -> bindParam(":valor", $valor, PDO::PARAM_STR);
 

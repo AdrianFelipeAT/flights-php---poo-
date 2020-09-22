@@ -21,7 +21,6 @@
       <div class="form-group has-feedback">
 
         <input type="text" class="form-control" placeholder="Código" name="codigo" id="codigoasignado" readonly="readonly" required>
-        <input type="text" class="form-control" placeholder="Identificación del cliente" name="identificacion" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
       </div>

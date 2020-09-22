@@ -8,12 +8,11 @@ class ControladorAsignar{
 
 	static public function ctrAsignarCodigo(){
 
-		if(isset($_POST["codigo"]) and isset($_POST["identificacion"])){
+		if(isset($_POST["codigo"])){
 
-			$identificacion = $_POST["codigo"];
 			$codigo = $_POST["codigo"];
 
-			$respuesta = ModeloAsignacion::mdlAsignarCodigo($identificacion, $codigo);
+			$respuesta = ModeloAsignacion::mdlAsignarCodigo($codigo);
 
 			if($respuesta == "ok"){
 

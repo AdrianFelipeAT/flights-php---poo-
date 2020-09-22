@@ -9,36 +9,35 @@ class ControladorUsuarios{
 	static public function ctrIngresoUsuario(){
 
 		if(isset($_POST["codigo"])){
-			$tabla = "codigo";
+			$tabla = "codigos";
 
-			$item = "codigo";
+			$item = "codigoacceso";
 			$valor = $_POST["codigo"];
-			$codeadm = 10001;
+			$codeadm = 1;
 
 			$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
 
+			if($respuesta["codigoacceso"] == $_POST["codigo"]){
 
-			if($respuesta["codigo"] == $_POST["codigo"] and $respuesta["vendido"] == 1 ){
-
-				if($respuesta["n_ingreso"] == 0){
+				if($respuesta["generado"] == 0){
 
 					$_SESSION["iniciarSesion"] = "ok";
 					$_SESSION["id"] = $respuesta["id"];
-					$_SESSION["codigo"] = $respuesta["codigo"];
-					$_SESSION["n_ingreso"] = $respuesta["n_ingreso"];
+					$_SESSION["codigoacceso"] = $respuesta["codigoacceso"];
+					$_SESSION["generado"] = $respuesta["generado"];
 
 					/*=============================================
 					REGISTRAR ACCESO DEL CÓDIGO
 					=============================================*/
 
-					$item1 = "n_ingreso";
+					$item1 = "generado";
 					$valor1 = 1;
 
 					$item2 = "id";
 					$valor2 = $respuesta["id"];
 
-					$AccesoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
+					//$AccesoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
 
 					if($AccesoLogin == "ok" and $respuesta['id'] != $codeadm){
 
@@ -59,7 +58,7 @@ class ControladorUsuarios{
 				}else{
 
 					echo '<br>
-						<div class="alert alert-danger">Este código está en uso</div>';
+						<div class="alert alert-danger">Este código ya fue usado</div>';
 
 				}		
 
@@ -79,7 +78,7 @@ class ControladorUsuarios{
 
 	static public function ctrTerminarSesion($item, $valor){
 
-		$tabla = "codigo";
+		$tabla = "codigos";
 
 		$respuesta = ModeloUsuarios::MdlTerminarSesion($tabla, $item, $valor);
 

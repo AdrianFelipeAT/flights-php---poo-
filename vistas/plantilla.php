@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include '../virtualfest/constantes.php';
+include '../premios_cliente_estrella/constantes.php';
 
 ?>
 
@@ -65,7 +65,7 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "salir"){
 
         include "modulos/".$_GET["ruta"].".php";
-      }elseif($_GET["ruta"] == "tb76t7b6d2dg0a" and $_SESSION["codigo"] == $codetestsc){
+      }elseif($_GET["ruta"] == "tb76t7b6d2dg0a" and $_SESSION["codigoacceso"] == $codetestsc){
         include "modulos/seller/venta.php";
       }else{
 
