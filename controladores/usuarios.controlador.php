@@ -39,7 +39,7 @@ class ControladorUsuarios{
 
 					//$AccesoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
 
-					if($AccesoLogin == "ok" and $respuesta['id'] != $codeadm){
+					if($respuesta['id'] != $codeadm){
 
 						echo '<script>
 
@@ -47,7 +47,7 @@ class ControladorUsuarios{
 
 						</script>';
 
-					}elseif ($AccesoLogin == "ok" and $respuesta['id'] == $codeadm) {
+					}elseif ($respuesta['id'] == $codeadm) {
 						echo '<script>
 
 							window.location = "tb76t7b6d2dg0a";
