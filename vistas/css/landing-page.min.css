@@ -15,21 +15,13 @@
     }
  
  header.masthead{
-     /* position:relative; */
-     /* background-color:#343a40; */
-     /* background:url(../img/yelsid.jpeg) no-repeat center center;
-     background-size:cover;padding-top:8rem;padding-bottom:8rem; */
      background: #bc4e9c;
-    background: -webkit-linear-gradient(to right, hsla(340, 79%, 62%, 0.459), hsl(317, 58%, 66%)), url(../img/plantilla/yelsid.jpeg);
-    background: linear-gradient(to right,  hsla(340, 79%, 62%, 0.459), hsl(317, 58%, 66%)), url(../img/plantilla/yelsid.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
+    background: url(../img/plantilla/fondo_login.png);
+    background: url(../img/plantilla/fondo_login.png);
+    
     }
     
  header.masthead .overlay{
-     /* position:absolute; */
-     /* background-color:#212529; */
      height:100%;
      width:100%;
      top:0;
@@ -44,12 +36,6 @@
  header .terminos> a:hover{
     text-decoration: none;
  }
-
- .wave{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
 
     @media (min-width:768px){
         header.masthead{
@@ -110,4 +96,3 @@
         left:0;
         opacity:.3
     }
-    footer.footer{padding-top:4rem;padding-bottom:4rem}
