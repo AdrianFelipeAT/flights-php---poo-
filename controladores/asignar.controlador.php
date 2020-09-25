@@ -4,6 +4,9 @@ class ControladorAsignar{
 
 	/*=============================================
 	INGRESO DE USUARIO
+	Autor: Adrián Felipe Arroyave
+	Version: 1.0
+	Fecha de creación: 19 de septiembre del 2020
 	=============================================*/
 
 	static public function ctrAsignarCodigo(){

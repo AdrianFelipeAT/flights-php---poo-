@@ -1,7 +1,7 @@
 <?php
 
-$nombreEmpresa = "Premios Cliente Estrella"; 
-$codetestsc = "45hj9";
+$NOMBREEPMPRESA = "Premios Cliente Estrella"; 
+$CODETESTSC = "45hj9";
 
 
 ?>
