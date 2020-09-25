@@ -17,7 +17,7 @@ include '../premios_cliente_estrella/constantes.php';
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="icon" href="vistas/img/plantilla/x.png">
+  <link rel="icon" href="vistas/img/plantilla/favicon.png">
 
    <!--=====================================
   PLUGINS DE CSS
@@ -30,7 +30,11 @@ include '../premios_cliente_estrella/constantes.php';
 
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/AdminLTE.css">
+
   
+  <!-- CSS login-->
+  <link rel=stylesheet href="css/style.css" type="text/css" media=all>
+
 </head>
 
 <!--=====================================

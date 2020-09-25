@@ -91,6 +91,7 @@ header.masthead h1 {
 .testimonials {
   padding-top: 7rem;
   padding-bottom: 7rem;
+  padding: 30%;
 }
 
 .testimonials .testimonial-item {

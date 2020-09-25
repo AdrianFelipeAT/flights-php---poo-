@@ -8,10 +8,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Sábado Fest</title>
+  <title>Premios Cliente Estrella</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="vistas/img/plantilla/logo_susuerte.png">
+  <link rel="icon" href="vistas/img/plantilla/favicon.png">
+
+  <!-- Popup -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   <!-- Bootstrap core CSS -->
   <link href="vistas/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,8 +37,6 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="salir">Cerrar Sesión</a>
-              
-
             </li>
           </ul>
         </div>
@@ -54,109 +55,81 @@
           </div>
         </div>
       </div>
-      <div class="wave" style="height: 300px; overflow: hidden;">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-          <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill:#f8f9fa;">
-          </path>
-        </svg>
       </div>
-        </header>
-        
-        <!-- Video -->
-          <section></section>
+    </header>
 
-
-  <!-- Icons Grid -->
-  <section class="features-icons bg-light text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fab fa-itunes-note m-auto text-danger"></i>
-            </div>
-            <h3>SUS GRANDES ÉXITOS</h3>
-            <p class="lead mb-0">
-              &sdot; Pensando en ella
-              &sdot; Sólo yo 
-              <br>
-              &sdot; Volverás a mí
-              &sdot; A lo moderno
-              <br>
-              &sdot; El bus
-              &sdot; Música Ligera
-              <br>
-              &sdot; Enseñame a mentir 
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fas fa-guitar m-auto text-danger"></i>
-            </div>
-            <h3>MEJORES</h3>
-            <p class="lead mb-0">...</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fas fa-headset m-auto text-danger"></i>
-            </div>
-            <h3>CANCIONES</h3>
-            <p class="lead mb-0">...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Image Showcases -->
-  <section class="showcase">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('vistas/img/plantilla/yelsid.jpeg');"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>YELSID</h2>
-          <p class="lead mb-0">La voz de la calle</p>
-        </div>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6 text-white showcase-img" style="background-image: url('vistas/img/plantilla/song1.jpg');"></div>
-        <div class="col-lg-6 my-auto showcase-text">
-          <p class="lead mb-0">Yelcid Arbey Osorio Hurtado,(7 de septiembre de 1979, Medellín-Antioquia) conocido artísticamente como "Yelsid" La Voz De La Calle, es un cantante colombiano de reggaeton. Nació en la ciudad de Medellin-Colombia. Ahora mismo esta siendo muy reconocido en Paraguay, Argentina, Chile, y otros países latinoamericanos.</p>
-        </div>
-      </div>
-  </section>
 
   <!-- Testimonials -->
-  <section class="testimonials text-center bg-light">
-    <div class="container">
-      <form method="post">
-
-      <div class="form-group has-feedback">
-
-        <input type="text" class="form-control" placeholder="Identificacion" name="identificacion" required>
-        <input type="text" class="form-control" placeholder="Nombres" name="nombres" required>
-        <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" required>
-        <input type="text" class="form-control" placeholder="Número de celular" name="celular" required>
-        <input type="text" class="form-control" placeholder="Número de cédula" name="cedula" required>
-        <input type="text" class="form-control" placeholder="Municipio" name="municipio" required>
-        <input type="text" class="form-control" placeholder="Correo Electrónico" name="email" required>
-
+  <section class="testimonials bg-light">
+  <form method="post">
+      <div class="contenedor">
+      <div class="form-row">
+      <div class="form-group col-md-3">
+      <label for="nombre">Nombre Completo *</label>
+        <div class="input-group">
+        <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user-tie"></i></span></div>
+        <input type="text" class="form-control" name="nombres" required>
+        </div>
       </div>
 
-      <div class="row">
-       
-        <div class="center">
+      <div class="form-group col-md-3">
+      <label for="apellido">Número de Cédula *</label>
+      <div class="input-group">
+      <div class="input-group-prepend"><span class="input-group-text"><i class="far fa-address-card"></i></span></div>
+        <input type="number" class="form-control" name="cedula" required>
+        </div>
+      </div>
+      </div>
 
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
-        
+      <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="direccion">Fecha de Nacimiento *</label>
+        <div class="input-group">
+        <div class="input-group-prepend"><span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+        </div>
+          <input type="date" class="form-control" id="direccion" name="direccion" required="direccion">
+        </div>
         </div>
 
+        <div class="form-group col-md-3">
+        <label for="correo">Correo Electrónico *</label>
+        <div class="input-group">
+        <div class="input-group-prepend"><span class="input-group-text">@</span>
+        </div>
+          <input type="mail" class="form-control" name="email" required>
+        </div>
+        </div>
+        </div>
       </div>
+      </div>
+
+      <div class="form-row">
+      <div class="form-group col-md-3">
+      <label for="ciudad" class="control-label">Municipio de Residencia *</label>
+      <div class="input-group">
+      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
+      </div>
+      <input type="text" class="form-control" name="municipio" required>
+      </div>
+      </div>
+
+      <div class="form-group col-md-3">
+      <label for="telefono">Teléfono *</label>
+      <div class="input-group">
+      <div class="input-group-prepend"><span class="input-group-text"><i class="icon icon-phone"></i></span>
+      </div>
+        <input type="number" class="form-control" name="celular" required>
+      </div>
+      </div>
+      </div>
+      <br>
+      <input type="radio" name="condiciones" required="">&nbsp; &nbsp;He leído y acepto las condiciones de la <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank"> Política de Tratamiento de Datos Personales</a><br><br>
+
+      <button type="submit" class="btn btn-success">Enviar</button>&nbsp; &nbsp;
+      <button type="reset" class="btn btn-danger">Cancelar Operación</button>
+
+</div>
+</div>
 
       <?php
 
@@ -166,73 +139,36 @@
       ?>
 
     </form>
+  </div>
+</section>
+  
+    <!-- popup -->
+    <div class="modal hide fade" id="myModal">
+    <div class="modal-header">
+      <a class="close" data-dismiss="modal">×</a>
+      <h3>Modal header</h3>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-          <ul class="list-inline mb-2">
-            <li class="list-inline-item">
-              <a href="https://www.susuerte.com/" target="_blank">Susuerte S.A</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Términos y Condiciones</a>
-            </li>
-          </ul>
-          <p class="text-muted small mb-4 mb-lg-0">
-            NIT.810.000317 - 8
-            <br>
-            Calle 21 No. 22 - 16
-            <br>
-            ISO / IEC 27001 - ISO 9001
-            <br>
-            +57 (6) 897 14 99 ext. 237
-            <br>
-            Línea de atención al cliente
-            <br>
-            Manizales - Caldas - Colombia
-            <br>
-            PBX: +57 (6) 897 14 99 / Fax ext. 242
-          
-            Línea de Resultados 897 78 78 - 883 00 90
-            <br>
-            &copy;2020. Todos los Derechos Reservados.</p>
-        </div>
-        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item">
-              <a href="https://www.facebook.com/Susuerte?fref=ts" target="_blank">
-                <i class="fab fa-facebook fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.instagram.com/susuerte/" target="_blank">
-                <i class="fab fa-instagram fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" target="_blank">
-                <i class="fab fa-youtube fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://api.whatsapp.com/send?phone=310 497 93 79" target="_blank">
-                <i class="fab fa-whatsapp fa-2x fa-fw"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <div class="modal-body">
+      <p>One fine body…</p>
     </div>
-  </footer>
+    <div class="modal-footer">
+      <a href="#" class="btn">Close</a>
+      <a href="#" class="btn btn-primary">Save changes</a>
+    </div>
+  </div>
+  
+  <a class="btn" data-toggle="modal" href="#myModal" >Launch Modal</a>
+  
+  <script type="text/javascript">
+      $(window).on('load',function(){
+          $('#myModal').modal('show');
+      });
+  </script>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 
 </body>
 

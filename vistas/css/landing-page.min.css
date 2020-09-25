@@ -78,14 +78,15 @@
     }
     .testimonials{
         padding-top:7rem;
-        padding-bottom:7rem
+        padding-bottom:7rem;
+        padding: 30%;
     }
     .testimonials .testimonial-item{
-        max-width:18rem
+        max-width:18rem;
     }
     .testimonials .testimonial-item img{
         max-width:12rem;
-        box-shadow:0 5px 5px 0 #adb5bd
+        box-shadow:0 5px 5px 0 #adb5bd;
     }
     .overlay{
         position:absolute;
