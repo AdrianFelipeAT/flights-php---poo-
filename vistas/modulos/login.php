@@ -5,13 +5,14 @@
   <!-- Ingreso Código -->
 
   <form method="post">
-      <div class="form-group">
-      <h1 class="login-box-msg">Ingresa el Código</h1>
-        <input type="text" class="form-control" placeholder="Código"name="codigo" required>
+     <div class="form-label-group">
+      <h5 class="card-title text-center login-box-msg">Ingresa el Código</h5>
+       <input type="text" id="inputText" class="form-control" placeholder="Código" name="codigo" required>
       </div>
       <div class="row">
          <button type="submit" class="btn btn-primary">Continuar</button>
       </div>
+      
       <?php
 
         $login = new ControladorUsuarios();

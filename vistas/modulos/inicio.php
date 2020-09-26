@@ -36,7 +36,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="salir">Cerrar Sesión</a>
+            <button type="button" class="btn btn-info">
+              <a class="nav-link js-scroll-trigger" href="salir">Cerrar Sesión</a></button>
             </li>
           </ul>
         </div>
@@ -46,8 +47,8 @@
     
     <!-- Masthead -->
     <header class="masthead text-white text-center">
-      
-      <div class="overlay"></div>
+
+    <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
@@ -55,121 +56,88 @@
           </div>
         </div>
       </div>
-      </div>
-    </header>
-
-
-  <!-- Testimonials -->
-  <section class="testimonials bg-light">
-  <form method="post">
-      <div class="contenedor">
-      <div class="form-row">
-      <div class="form-group col-md-3">
-      <label for="nombre">Nombre Completo *</label>
-        <div class="input-group">
-        <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-user-tie"></i></span></div>
-        <input type="text" class="form-control" name="nombres" required>
-        </div>
-      </div>
-
-      <div class="form-group col-md-3">
-      <label for="apellido">Número de Cédula *</label>
-      <div class="input-group">
-      <div class="input-group-prepend"><span class="input-group-text"><i class="far fa-address-card"></i></span></div>
-        <input type="number" class="form-control" name="cedula" required>
-        </div>
-      </div>
-      </div>
-
-      <div class="form-row">
-      <div class="form-group col-md-3">
-        <label for="direccion">Fecha de Nacimiento *</label>
-        <div class="input-group">
-        <div class="input-group-prepend"><span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-        </div>
-          <input type="date" class="form-control" id="direccion" name="direccion" required="direccion">
-        </div>
-        </div>
-
-        <div class="form-group col-md-3">
-        <label for="correo">Correo Electrónico *</label>
-        <div class="input-group">
-        <div class="input-group-prepend"><span class="input-group-text">@</span>
-        </div>
-          <input type="mail" class="form-control" name="email" required>
-        </div>
-        </div>
-        </div>
-      </div>
-      </div>
-
-      <div class="form-row">
-      <div class="form-group col-md-3">
-      <label for="ciudad" class="control-label">Municipio de Residencia *</label>
-      <div class="input-group">
-      <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
-      </div>
-      <input type="text" class="form-control" name="municipio" required>
-      </div>
-      </div>
-
-      <div class="form-group col-md-3">
-      <label for="telefono">Teléfono *</label>
-      <div class="input-group">
-      <div class="input-group-prepend"><span class="input-group-text"><i class="icon icon-phone"></i></span>
-      </div>
-        <input type="number" class="form-control" name="celular" required>
-      </div>
-      </div>
-      </div>
-      <br>
-      <input type="radio" name="condiciones" required="">&nbsp; &nbsp;He leído y acepto las condiciones de la <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank"> Política de Tratamiento de Datos Personales</a><br><br>
-
-      <button type="submit" class="btn btn-success">Enviar</button>&nbsp; &nbsp;
-      <button type="reset" class="btn btn-danger">Cancelar Operación</button>
-
-</div>
-</div>
-
-      <?php
-
-        $login = new ControladorUsuarios();
-        $login -> ctrActualizacionDatos();
-        
-      ?>
-
-    </form>
-  </div>
-</section>
-  
-    <!-- popup -->
-    <div class="modal hide fade" id="myModal">
-    <div class="modal-header">
-      <a class="close" data-dismiss="modal">×</a>
-      <h3>Modal header</h3>
     </div>
-    <div class="modal-body">
-      <p>One fine body…</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#" class="btn">Close</a>
-      <a href="#" class="btn btn-primary">Save changes</a>
+
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+             <!-- Background image premios set in CSS! -->
+          </div>
+          <div class="card-body">
+            <center>
+            <img src="https://www.susuerte.com/wp-content/uploads/2020/09/BOTON.png" width="120px">
+            </center><br><br>
+            <form class="form-signin" method="post">
+              <div class="form-label-group">
+                <input type="text" id="inputUserame" class="form-control" placeholder="Nombre Completo" required>
+                <label>Nombre Completo</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="number" id="inputNumber" class="form-control" placeholder="Correo Electrónico" required>
+                <label for="inputNumber">Número de Cédula</label>
+              </div>
+              
+              <div class="form-label-group">
+                <input type="tel" id="inputTel" class="form-control" placeholder="Número de Teléfono" required>
+                <label for="inputTel">Número de Teléfono</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Correo Electrónico" required>
+                <label for="inputEmail">Correo Electrónico</label>
+              </div>
+
+              <div class="form-label-group">
+                <!-- <input type="text" id="inputText" class="form-control" placeholder="Municipio de Residencia" required> -->
+                <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                </select>
+              </div>
+
+              <div class="form-label-group">
+                <input type="date" id="inputDate" class="form-control" placeholder="Fecha de Nacimiento" required>
+                <label for="inputDate">Fecha de Nacimiento</label>
+              </div>
+              
+              <hr>
+
+              <input type="radio" name="condiciones" required="">&nbsp; &nbsp;He leído y acepto las condiciones de la
+               <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank">
+              Política de Tratamiento de Datos Personales</a><br><br>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Enviar</button>
+              <hr class="my-4">
+              <br>
+              <h5 class="card-title text-center">Nos encuentras en Redes Sociales como:</h5>
+              <center>
+                <!-- Instagram -->
+                <button class="btn btn-lg btn-instagram btn-success btn-rounded text-uppercase" type="button"><i class="fab fa-instagram mr-2"></i>
+                <a href="https://www.instagram.com/susuerte/" target="_blank">Susuerte</a></button>
+                <!-- Facebook -->
+                <button class="btn btn-lg btn-facebook btn-rounded text-uppercase" type="button"><i class="fab fa-facebook-f mr-2"></i>
+                <a href="https://www.facebook.com/Susuerte?fref=ts" target="_blank">Susuerte</a></button>
+                <!-- Youtube -->
+                <button class="btn btn-lg btn-danger btn-rounded text-uppercase" type="button"><i class="fab fa-youtube mr-2"></i>
+                <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" target="_blank">Susuerte S.A</a></button>
+              </center>
+              </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  
-  <a class="btn" data-toggle="modal" href="#myModal" >Launch Modal</a>
-  
-  <script type="text/javascript">
-      $(window).on('load',function(){
-          $('#myModal').modal('show');
-      });
-  </script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>
