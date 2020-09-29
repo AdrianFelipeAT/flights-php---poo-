@@ -95,11 +95,11 @@
       </div>
     </div>
 
-  <script type="text/javascript">
-    $(window).on('load',function(){
-        $('#myModal').modal('show');
-    });
-</script>
+    <script type="text/javascript">
+      $(window).on('load',function(){
+          $('#myModal').modal('show');
+      });
+    </script>
 
   <!-- Icons Grid -->
   <section class="features-icons bg-light text-center">
