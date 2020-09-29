@@ -33,6 +33,19 @@ include '../premios_cliente_estrella/constantes.php';
 
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/AdminLTE.css">
+
+  
+  <!-- CSS login-->
+
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/animate.css">
+  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/hamburgers.min.css">
+  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/animsition.min.css">
+  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/select2.min.css">
+  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/daterangepicker.css">
   
 </head>
 
@@ -98,7 +111,16 @@ CUERPO DOCUMENTO
   ?>
 
 
-
+<!--SCRIPT login-->
+  <script src="vistas/plantilla_css/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vistas/plantilla_css/jquery/animsition.min.js"></script>
+	<script src="vistas/plantilla_css/jquery/popper.js"></script>
+	<script src="vistas/plantilla_css/jquery/bootstrap.min.js"></script>
+	<script src="vistas/plantilla_css/jquery/select2.min.js"></script>
+	<script src="vistas/plantilla_css/jquery/moment.min.js"></script>
+	<script src="vistas/plantilla_css/jquery/daterangepicker.js"></script>
+	<script src="vistas/plantilla_css/jquerycountdowntime.js"></script>
+	<script src="vistas/plantilla_css/jquery/main.js"></script>
 
 </body>
 </html>

@@ -8,10 +8,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Sábado Fest</title>
+  <title>Premios Cliente Estrella</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="vistas/img/plantilla/logo_susuerte.png">
+  <link rel="icon" href="vistas/img/plantilla/favicon.png">
+
+  <!-- Popup -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   <!-- Bootstrap core CSS -->
   <link href="vistas/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,9 +39,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="salir">Cerrar Sesión</a>
-              
-
+            <button type="button" class="btn btn-info">
+              <a class="nav-link js-scroll-trigger" href="salir">Cerrar Sesión</a></button>
             </li>
           </ul>
         </div>
@@ -48,227 +50,132 @@
     
     <!-- Masthead -->
     <header class="masthead text-white text-center">
-      
-      <div class="overlay"></div>
+
+    <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5"><?php echo($_SESSION["codigoseta"])?></h1>
+            <h1 class="mb-5"></h1>
           </div>
         </div>
-      </div>
-      <div class="wave" style="height: 300px; overflow: hidden;">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-          <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill:#f8f9fa;">
-          </path>
-        </svg>
-      </div>
-        </header>
-        
-        <!-- Video -->
-          <section></section>
-
-
-  <!-- Trigger the modal with a button -->
-
-    <!-- Modal -->
-    <div id="myModal" class="modal" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          
-          <div class="modal-body">
-            <p>Some text in the modaS
-
-            DSF
-
-          l
-          <br>
-
-          d
-        .</p>
-          </div>
-          
-        </div>
-
       </div>
     </div>
 
-    <script type="text/javascript">
-      $(window).on('load',function(){
-          $('#myModal').modal('show');
-      });
-    </script>
+  </header>
 
-  <!-- Icons Grid -->
-  <section class="features-icons bg-light text-center">
+  <section class="py-5">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fab fa-itunes-note m-auto text-danger"></i>
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+
+                <!-- CUSTOM BLOCKQUOTE -->
+                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                    <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
+                    <p class="mb-0 mt-2 font-italic center" >PARA RECLAMAR EL PREMIO, DEBE DIRIGIRSE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b> Y SUMINISTRAR EL SIGUIENTE CÓDIGO: <b class="text-info"><?php echo($_SESSION["codigoseta"])?></b></p>
+                    <footer class="blockquote-footer pt-4 mt-4 border-top">Recuerde que este código es único e intransferible.
+                    </footer>
+                </blockquote><!-- END -->
+
             </div>
-            <h3>SUS GRANDES ÉXITOS</h3>
-            <p class="lead mb-0">
-              &sdot; Pensando en ella
-              &sdot; Sólo yo 
-              <br>
-              &sdot; Volverás a mí
-              &sdot; A lo moderno
-              <br>
-              &sdot; El bus
-              &sdot; Música Ligera
-              <br>
-              &sdot; Enseñame a mentir 
-            </p>
-          </div>
         </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fas fa-guitar m-auto text-danger"></i>
-            </div>
-            <h3>MEJORES</h3>
-            <p class="lead mb-0">...</p>
+    </div>
+</section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+             <!-- Background image premios set in CSS! -->
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fas fa-headset m-auto text-danger"></i>
+          <div class="card-body">
+            <center>
+            <img src="https://www.susuerte.com/wp-content/uploads/2020/09/BOTON.png" width="120px">
+            </center><br><br>
+            <form class="form-signin" method="post">
+              <div class="form-label-group">
+                <input type="text" id="inputUserame" class="form-control" placeholder="Nombre Completo" required>
+                <label>Nombre Completo</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="number" id="inputNumber" class="form-control" placeholder="Correo Electrónico" required>
+                <label for="inputNumber">Número de Cédula</label>
+              </div>
+              
+              <div class="form-label-group">
+                <input type="tel" id="inputTel" class="form-control" placeholder="Número de Teléfono" required>
+                <label for="inputTel">Número de Teléfono</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Correo Electrónico" required>
+                <label for="inputEmail">Correo Electrónico</label>
+              </div>
+
+              <div class="row">
+            <div class="col-lg-6 mx-auto">
+            <!-- Multiselect dropdown -->
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100">
+                <option>United Kingdom</option>
+                <option>United States</option>
+                <option>France</option>
+                <option>Germany</option>
+                <option>Italy</option>
+            </select><!-- End -->
             </div>
-            <h3>CANCIONES</h3>
-            <p class="lead mb-0">...</p>
+            </div>
+
+
+
+            
+<!--IMPORTANTE  https://bootstrapious.com/p/login-split-page              https://bootstrapious.com/p/bootstrap-multiselect-dropdown-->
+
+
+
+
+
+              <div class="form-label-group">
+                <input type="date" id="inputDate" class="form-control" placeholder="Fecha de Nacimiento" required>
+                <label for="inputDate">Fecha de Nacimiento</label>
+              </div>
+              
+              <hr>
+
+              <input type="radio" name="condiciones" required="">&nbsp; &nbsp;He leído y acepto las condiciones de la
+               <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank">
+              Política de Tratamiento de Datos Personales</a><br><br>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Enviar</button>
+              
+              <!-- Divider -->
+              <div class="mb-4">
+                <hr data-content="y" class="hr-text">
+              </div>
+
+              <br>
+              <h5 class="card-title text-center">Nos encuentras en Redes Sociales como:</h5>
+              <center>
+                <!-- Instagram -->
+                <button class="btn btn-lg btn-instagram btn-rounded text-uppercase" type="button"><i class="fab fa-instagram mr-2"></i>
+                <a href="https://www.instagram.com/susuerte/" target="_blank">Susuerte</a></button>
+                <!-- Facebook -->
+                <button class="btn btn-lg btn-facebook btn-rounded text-uppercase" type="button"><i class="fab fa-facebook-f mr-2"></i>
+                <a href="https://www.facebook.com/Susuerte?fref=ts" target="_blank">Susuerte</a></button>
+                <!-- Youtube -->
+                <button class="btn btn-lg btn-youtube btn-rounded text-uppercase" type="button"><i class="fab fa-youtube mr-2"></i>
+                <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" target="_blank">Susuerte S.A</a></button>
+              </center>
+              </form>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Image Showcases -->
-  <section class="showcase">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('vistas/img/plantilla/yelsid.jpeg');"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>YELSID</h2>
-          <p class="lead mb-0">La voz de la calle</p>
-        </div>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6 text-white showcase-img" style="background-image: url('vistas/img/plantilla/song1.jpg');"></div>
-        <div class="col-lg-6 my-auto showcase-text">
-          <p class="lead mb-0">Yelcid Arbey Osorio Hurtado,(7 de septiembre de 1979, Medellín-Antioquia) conocido artísticamente como "Yelsid" La Voz De La Calle, es un cantante colombiano de reggaeton. Nació en la ciudad de Medellin-Colombia. Ahora mismo esta siendo muy reconocido en Paraguay, Argentina, Chile, y otros países latinoamericanos.</p>
-        </div>
-      </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials text-center bg-light">
-    <div class="container">
-      <form method="post">
-
-      <div class="form-group has-feedback">
-
-        <input type="text" class="form-control" placeholder="Identificacion" name="identificacion" required>
-        <input type="text" class="form-control" placeholder="Nombres" name="nombres" required>
-        <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" required>
-        <input type="text" class="form-control" placeholder="Número de celular" name="celular" required>
-        <input type="text" class="form-control" placeholder="Número de cédula" name="cedula" required>
-        <input type="text" class="form-control" placeholder="Municipio" name="municipio" required>
-        <input type="text" class="form-control" placeholder="Correo Electrónico" name="email" required>
-
-      </div>
-
-      <div class="row">
-       
-        <div class="center">
-
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
-        
-        </div>
-
-      </div>
-
-      <?php
-
-        $login = new ControladorUsuarios();
-        $login -> ctrActualizacionDatos();
-        
-      ?>
-
-    </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-          <ul class="list-inline mb-2">
-            <li class="list-inline-item">
-              <a href="https://www.susuerte.com/" target="_blank">Susuerte S.A</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Términos y Condiciones</a>
-            </li>
-          </ul>
-          <p class="text-muted small mb-4 mb-lg-0">
-            NIT.810.000317 - 8
-            <br>
-            Calle 21 No. 22 - 16
-            <br>
-            ISO / IEC 27001 - ISO 9001
-            <br>
-            +57 (6) 897 14 99 ext. 237
-            <br>
-            Línea de atención al cliente
-            <br>
-            Manizales - Caldas - Colombia
-            <br>
-            PBX: +57 (6) 897 14 99 / Fax ext. 242
-          
-            Línea de Resultados 897 78 78 - 883 00 90
-            <br>
-            &copy;2020. Todos los Derechos Reservados.</p>
-        </div>
-        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item">
-              <a href="https://www.facebook.com/Susuerte?fref=ts" target="_blank">
-                <i class="fab fa-facebook fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.instagram.com/susuerte/" target="_blank">
-                <i class="fab fa-instagram fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" target="_blank">
-                <i class="fab fa-youtube fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://api.whatsapp.com/send?phone=310 497 93 79" target="_blank">
-                <i class="fab fa-whatsapp fa-2x fa-fw"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
 </html>
