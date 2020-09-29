@@ -4,56 +4,33 @@
 
   <!-- Ingreso Código -->
 
-  <form method="post">
-     <div class="form-label-group">
-      <h5 class="card-title text-center login-box-msg">Ingresa el Código</h5>
-       <input type="text" id="inputText" class="form-control" placeholder="Código" name="codigo" required>
-      </div>
-      <div class="row">
-         <button type="submit" class="btn btn-primary">Continuar</button>
-      </div>
-      
-      <?php
+  <div class="container-fluid">
+    <div class="row no-gutter">
+        <!-- The image half -->
+        <div class="col-md-6 d-none d-md-flex bg-image"></div>
 
-        $login = new ControladorUsuarios();
-        $login -> ctrIngresoUsuario();
-        
-      ?>
-  </form>
 
-<!-- Original
-  <div class="login-box-body">
+        <!-- The content half -->
+        <div class="col-md-6 bg-light">
+            <div class="login d-flex align-items-center py-5">
 
-    <p class="login-box-msg">Ingresa el Código</p>
+                <!-- Form-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-7 mx-auto">
+                        <h3 class="display-4">Bienvenido</h3>
+                <form method="post">
+                <div class="form-group mb-3">
+                    <input id="inputText" type="text" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" name="codigo">
+                </div>
 
-    <form method="post">
-
-      <div class="form-group has-feedback">
-
-        <input type="text" class="form-control" placeholder="Código" name="codigo" required>
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-
-      </div>
-
-      <div class="row">
-       
-        <div class="center">
-
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Continuar</button>
-        
-        </div>
-
-      </div>
-
-      <?php
-
-        $login = new ControladorUsuarios();
-        $login -> ctrIngresoUsuario();
-        
-      ?>
-
-    </form>
-
-  </div> -->
-
-</div>
+                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Continuar</button>
+                            
+         <?php
+          $login = new ControladorUsuarios();
+          $login -> ctrIngresoUsuario();
+          ?>
+				</form>
+			</div>
+		</div>
+	</div>

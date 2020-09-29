@@ -52,13 +52,31 @@
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5"><?php echo($_SESSION["codigoseta"])?></h1>
+            <h1 class="mb-5"></h1>
           </div>
         </div>
       </div>
     </div>
 
   </header>
+
+  <section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+
+                <!-- CUSTOM BLOCKQUOTE -->
+                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                    <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
+                    <p class="mb-0 mt-2 font-italic center" >PARA RECLAMAR EL PREMIO, DEBE DIRIGIRSE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b> Y SUMINISTRAR EL SIGUIENTE CÓDIGO: <b class="text-info"><?php echo($_SESSION["codigoseta"])?></b></p>
+                    <footer class="blockquote-footer pt-4 mt-4 border-top">Recuerde que este código es único e intransferible.
+                    </footer>
+                </blockquote><!-- END -->
+
+            </div>
+        </div>
+    </div>
+</section>
 
   <div class="container">
     <div class="row">
@@ -92,15 +110,27 @@
                 <label for="inputEmail">Correo Electrónico</label>
               </div>
 
-              <div class="form-label-group">
-                <!-- <input type="text" id="inputText" class="form-control" placeholder="Municipio de Residencia" required> -->
-                <select>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                </select>
-              </div>
+              <div class="row">
+            <div class="col-lg-6 mx-auto">
+            <!-- Multiselect dropdown -->
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100">
+                <option>United Kingdom</option>
+                <option>United States</option>
+                <option>France</option>
+                <option>Germany</option>
+                <option>Italy</option>
+            </select><!-- End -->
+            </div>
+            </div>
+
+
+
+            
+<!--IMPORTANTE  https://bootstrapious.com/p/login-split-page              https://bootstrapious.com/p/bootstrap-multiselect-dropdown-->
+
+
+
+
 
               <div class="form-label-group">
                 <input type="date" id="inputDate" class="form-control" placeholder="Fecha de Nacimiento" required>
@@ -114,18 +144,23 @@
               Política de Tratamiento de Datos Personales</a><br><br>
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Enviar</button>
-              <hr class="my-4">
+              
+              <!-- Divider -->
+              <div class="mb-4">
+                <hr data-content="y" class="hr-text">
+              </div>
+
               <br>
               <h5 class="card-title text-center">Nos encuentras en Redes Sociales como:</h5>
               <center>
                 <!-- Instagram -->
-                <button class="btn btn-lg btn-instagram btn-success btn-rounded text-uppercase" type="button"><i class="fab fa-instagram mr-2"></i>
+                <button class="btn btn-lg btn-instagram btn-rounded text-uppercase" type="button"><i class="fab fa-instagram mr-2"></i>
                 <a href="https://www.instagram.com/susuerte/" target="_blank">Susuerte</a></button>
                 <!-- Facebook -->
                 <button class="btn btn-lg btn-facebook btn-rounded text-uppercase" type="button"><i class="fab fa-facebook-f mr-2"></i>
                 <a href="https://www.facebook.com/Susuerte?fref=ts" target="_blank">Susuerte</a></button>
                 <!-- Youtube -->
-                <button class="btn btn-lg btn-danger btn-rounded text-uppercase" type="button"><i class="fab fa-youtube mr-2"></i>
+                <button class="btn btn-lg btn-youtube btn-rounded text-uppercase" type="button"><i class="fab fa-youtube mr-2"></i>
                 <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" target="_blank">Susuerte S.A</a></button>
               </center>
               </form>
