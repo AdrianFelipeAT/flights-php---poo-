@@ -21,7 +21,7 @@
                         <h3 class="display-4">Bienvenido</h3>
                 <form method="post">
                 <div class="form-group mb-3">
-                    <input id="inputText" type="text" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" name="codigo">
+                    <input id="inputText" type="text" placeholder="Código" required="" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" name="codigo">
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Continuar</button>
