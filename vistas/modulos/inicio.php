@@ -68,7 +68,7 @@
                 <!-- CUSTOM BLOCKQUOTE -->
                 <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
                     <div class="blockquote-custom-icon bg-info shadow-sm"><img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" width="20px" height="10px"></div>
-                    <p class="mb-0 mt-2 font-italic center" >PARA RECLAMAR EL PREMIO, DEBE DIRIGIRSE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b> Y SUMINISTRAR EL SIGUIENTE CÓDIGO: <b class="text-info"><?php echo($_SESSION["codigoseta"])?></b></p>
+                    <p class="mb-0 mt-2 font-italic center" >RECLAMA TU PREMIO DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b> Y SUMINISTRAR EL SIGUIENTE CÓDIGO: <b class="text-info"><?php echo($_SESSION["codigoseta"])?></b></p>
                     <footer class="blockquote-footer pt-4 mt-4 border-top">Recuerde que este código es único e intransferible.
                     </footer>
                 </blockquote><!-- END -->
@@ -113,23 +113,41 @@
  
               <div class="form-label-group">
             <select data-style="bg-white rounded-pill px-4 py-3 shadow-sm" class="selectpicker w-100">
-                <option>Selecciona el Municipio</option>    
-                <option>Manizales</option>
-                <option>Aguadas</option>
-                <option>Aranzazu</option>
-                <option>La Dorada</option>
-                <option>Palestina</option>
+                <option value="">Seleccione el Municipio de Residencia</option>
+                <option value="">Manizales</option>
+                <option value="">Aguadas</option>
+                <option value="">Anserma</option>
+                <option value="">Aranzazu</option>
+                <option value="">Belalcázar</option>
+                <option value="">Chinchiná</option>
+                <option value="">Filadelfia</option>
+                <option value="">La Dorada</option>
+                <option value="">La Merced</option>
+                <option value="">Manzanares</option>
+                <option value="">Marmato</option>
+                <option value="">Marquetalia</option>
+                <option value="">Marulanda</option>
+                <option value="">Neira</option>
+                <option value="">Norcasia</option>
+                <option value="">Pácora</option>
+                <option value="">Palestina</option>
+                <option value="">Pensilvania</option>
+                <option value="">Riosucio</option>
+                <option value="">Risaralda</option>
+                <option value="">Salamina</option>
+                <option value="">Samaná</option>
+                <option value="">San José</option>
+                <option value="">Supía</option>
+                <option value="">Victoria</option>
+                <option value="">Villamaría</option>
+                <option value="">Viterbo</option>
             </select><!-- End -->
               </div>
-      
-
-
-
+      <!-- diligencia el formulario para reclamar el bono regalo dejanos tus datos y uan vez lo diligencies te arrojara el codigo para que lo reclames en cualquier punto de venta
+    linear-gradient(rgb(237,255,255), rgb(237,255,255))
+  yo acepto el bono regalo de susuerte-->
             
-<!--IMPORTANTE  https://bootstrapious.com/p/login-split-page              https://bootstrapious.com/p/bootstrap-multiselect-dropdown-->
-
-
-
+<!-- https://bootstrapious.com/p/bootstrap-multiselect-dropdown-->
 
 
               <div class="form-label-group">
@@ -141,16 +159,18 @@
 
               <input type="radio" name="condiciones" required="">&nbsp; &nbsp;He leído y acepto las condiciones de la
                <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank">
-              Política de Tratamiento de Datos Personales</a><br><br>
-
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Enviar</button>
-              
-              <!-- Divider -->
-              <div class="mb-4">
-                <hr data-content="y" class="hr-text">
-              </div>
+              Política de Tratamiento de Datos Personales</a>
 
               <br>
+
+              <input type="radio" name="bono" required="">&nbsp; &nbsp;Yo acepto el <b>bono regalo</b> de Susuerte.
+
+              <br><br>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Enviar</button>
+
+              <br>
+
               <h5 class="card-title text-center">Nos encuentras en Redes Sociales como:</h5>
               <center>
                 <!-- Instagram -->
