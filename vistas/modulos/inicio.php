@@ -39,8 +39,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-            <button type="button" class="btn btn-info">
-              <a class="nav-link js-scroll-trigger" href="salir">Cerrar Sesión</a></button>
+            <button type="button" class="btn btn-danger btn-rounded">
+              <a href="salir"><abbr title="Cerrar Sesión"><i class="fas fa-sign-out-alt text-white"></i></abbr></a></button>
             </li>
           </ul>
         </div>
@@ -70,7 +70,7 @@
 
                 <!-- CUSTOM BLOCKQUOTE -->
                 <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-                    <div class="blockquote-custom-icon bg-info shadow-sm"><i class="fa fa-quote-left text-white"></i></div>
+                    <div class="blockquote-custom-icon bg-info shadow-sm"><img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" width="20px" height="10px"></div>
                     <p class="mb-0 mt-2 font-italic center" >PARA RECLAMAR EL PREMIO, DEBE DIRIGIRSE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b> Y SUMINISTRAR EL SIGUIENTE CÓDIGO: <b class="text-info"><?php echo($_SESSION["codigoseta"])?></b></p>
                     <footer class="blockquote-footer pt-4 mt-4 border-top">Recuerde que este código es único e intransferible.
                     </footer>
@@ -92,9 +92,10 @@
             <center>
             <img src="https://www.susuerte.com/wp-content/uploads/2020/09/BOTON.png" width="120px">
             </center><br><br>
-            <form class="form-signin" method="post">
+
+            <form method="post">
               <div class="form-label-group">
-                <input type="text" id="inputUserame" class="form-control" placeholder="Nombre Completo" required>
+                <input type="text" id="inputText" class="form-control" placeholder="Nombre Completo" required>
                 <label>Nombre Completo</label>
               </div>
 
@@ -112,19 +113,18 @@
                 <input type="email" id="inputEmail" class="form-control" placeholder="Correo Electrónico" required>
                 <label for="inputEmail">Correo Electrónico</label>
               </div>
-
-              <div class="row">
-            <div class="col-lg-6 mx-auto">
-            <!-- Multiselect dropdown -->
-            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100">
-                <option>United Kingdom</option>
-                <option>United States</option>
-                <option>France</option>
-                <option>Germany</option>
-                <option>Italy</option>
+ 
+              <div class="form-label-group">
+            <select data-style="bg-white rounded-pill px-4 py-3 shadow-sm" class="selectpicker w-100">
+                <option>Selecciona el Municipio</option>    
+                <option>Manizales</option>
+                <option>Aguadas</option>
+                <option>Aranzazu</option>
+                <option>La Dorada</option>
+                <option>Palestina</option>
             </select><!-- End -->
-            </div>
-            </div>
+              </div>
+      
 
 
 
@@ -136,7 +136,7 @@
 
 
               <div class="form-label-group">
-                <input type="date" id="inputDate" class="form-control" placeholder="Fecha de Nacimiento" required>
+                <input type="date" id="inputDate" class="form-control" placeholder="Fecha de Nacimiento" required name="fecha">
                 <label for="inputDate">Fecha de Nacimiento</label>
               </div>
               
