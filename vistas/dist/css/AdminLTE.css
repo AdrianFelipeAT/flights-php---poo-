@@ -5680,7 +5680,7 @@ table.text-center th {
     white-space: normal !important;
   }
 }
-
+/* Login Codigo*/
 .login,
 .image {
   min-height: 100vh !important;
@@ -5691,3 +5691,4 @@ table.text-center th {
   background-size: cover !important;
   background-position: center center !important;
 }
+/*end*/
