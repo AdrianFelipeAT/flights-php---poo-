@@ -116,16 +116,9 @@ class ModeloUsuarios{
 	ACTUALIZAR DATOS DE USUARIO ( INCERSIÓN EN BASE DE DATOS )
 	==========================================================*/
 
-	static public function mdlActualizarDatosUsuario($tabla, $identificacion, $nombres, $apellidos, $celular, $municipio, $correo_electronico){
+	static public function mdlActualizarDatosUsuario($tabla, $identificacion, $nombre_completo, $celular, $municipio, $fecha_nacimiento, $correo_electronico, $bono, $condiciones){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (identificacion, nombres, apellidos, celular, correo_electronico, municipio_residencia) VALUES (:$identificacion, :$nombres, :$apellidos, :$celular, :$correo_electronico, :$municipio)");
-
-		$stmt -> bindParam(":".$identificacion, $identificacion, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$nombres, $nombres, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$apellidos, $apellidos, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$celular, $celular, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$correo_electronico, $correo_electronico, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$municipio, $municipio, PDO::PARAM_STR);
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (identificacion, nombre_completo, celular, correo_electronico, municipio_residencia, fecha_nacimiento, acepto_politica, acepto_regalo) VALUES ('$identificacion', '$nombre_completo', '$celular', '$correo_electronico', '$municipio', '$fecha_nacimiento', '$condiciones', '$bono')");
 
 		if($stmt -> execute()){
 

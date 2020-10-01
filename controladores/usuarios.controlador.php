@@ -7,65 +7,53 @@ class ControladorUsuarios{
 	=============================================*/
 
 	static public function ctrIngresoUsuario(){
-
-		if(isset($_POST["codigo"])){
+		
+		if(isset($_GET["codigo"])){
 			$tabla = "codigos";
 
 			$item = "codigoacceso";
-			$valor = $_POST["codigo"];
+			$valor = $_GET["codigo"];
 			$codeadm = 1;
 
 			$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
+			if($respuesta["codigoacceso"] == $_GET["codigo"]){
 
-			if($respuesta["codigoacceso"] == $_POST["codigo"]){
+				$_SESSION["iniciarSesion"] = "ok";
+				$_SESSION["id"] = $respuesta["id"];
+				$_SESSION["codigoacceso"] = $respuesta["codigoacceso"];
+				$_SESSION["codigoseta"] = $respuesta["codigoseta"];
+				$_SESSION["id_bono_regalo"] = $respuesta["id_bono_regalo"];
 
-				if($respuesta["generado"] == 0){
+				/*=============================================
+				REGISTRAR ACCESO DEL CÓDIGO
+				=============================================*/
 
-					$_SESSION["iniciarSesion"] = "ok";
-					$_SESSION["id"] = $respuesta["id"];
-					$_SESSION["codigoacceso"] = $respuesta["codigoacceso"];
-					$_SESSION["codigoseta"] = $respuesta["codigoseta"];
-					$_SESSION["generado"] = $respuesta["generado"];
+				$item1 = "generado";
+				$valor1 = 1;
 
-					/*=============================================
-					REGISTRAR ACCESO DEL CÓDIGO
-					=============================================*/
+				$item2 = "id";
+				$valor2 = $respuesta["id"];
 
-					$item1 = "generado";
-					$valor1 = 1;
+				//$AccesoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
 
-					$item2 = "id";
-					$valor2 = $respuesta["id"];
+				if($respuesta['id'] != $codeadm){
 
-					//$AccesoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
+					echo '<script>
 
-					if($respuesta['id'] != $codeadm){
+						window.location = "inicio";
 
-						echo '<script>
-
-							window.location = "inicio";
-
-						</script>';
-
-					}elseif ($respuesta['id'] == $codeadm) {
-						echo '<script>
-
-							window.location = "tb76t7b6d2dg0a";
-
-						</script>';
-					}			
-					
-				}else{
-
-					echo '<br>
-						<div class="alert alert-danger">Este código ya fue usado</div>';
+					</script>';
 
 				}		
-
+				
 			}else{
 
-				echo '<br><div class="alert alert-danger">Error al ingresar, vuelve a intentarlo</div>';
+				echo '<script>
+
+						window.location = "404";
+
+					</script>';
 
 			}
 
@@ -92,28 +80,36 @@ class ControladorUsuarios{
 	=============================================*/
 
 	static public function ctrActualizacionDatos(){
-
-		if(isset($_POST["nombres"]) and isset($_POST["apellidos"]) and isset($_POST["celular"]) and isset($_POST["cedula"]) and isset($_POST["municipio"])){
+		if(isset($_POST["nombre_completo"]) and isset($_POST["celular"]) and isset($_POST["identificacion"]) and isset($_POST["municipio"]) and isset($_POST["fecha_nacimiento"]) and isset($_POST["bono"]) and isset($_POST["condiciones"])){
 
 			$tabla = "cliente";
 
+			$nombre_completo = $_POST["nombre_completo"];
 			$identificacion = $_POST["identificacion"];
-			$nombres = $_POST["nombres"];
-			$apellidos = $_POST["apellidos"];
 			$celular = $_POST["celular"];
 			$municipio = $_POST["municipio"];
+			$fecha_nacimiento = $_POST["fecha_nacimiento"];
+			$bono = $_POST["bono"];
+			$condiciones = $_POST["condiciones"];
 			if(isset($_POST["email"])){
 				$correo_electronico = $_POST["email"];
 			}else{
 				$correo_electronico = '';
 			}
 
-			$respuesta = ModeloUsuarios::mdlActualizarDatosUsuario($tabla, $identificacion, $nombres, $apellidos, $celular, $municipio, $correo_electronico);
+			$respuesta = ModeloUsuarios::mdlActualizarDatosUsuario($tabla, $identificacion, $nombre_completo, $celular, $municipio, $fecha_nacimiento, $correo_electronico, $bono, $condiciones);
 
 			if($respuesta == 'ok'){
-				$respuestas = ModeloUsuarios::mdlConsultaCodigoSeta($_SESSION["codigoacceso"]);
+				?>
+				<script>
+					var intro = document.getElementById('divinicial');
+					intro.style.display = 'inline';
+				</script>
+				<?php
+				echo "<script>
+					</script>";
 				echo '<br>
-						<div class="alert alert-success">Con el siguiente código puedes reclamar tu premio en un punto de venta: '.$respuestas["codigoseta"].'</div>';	
+						<div class="alert alert-success">Formualrio enviado correctamente</div>';	
 
 			}else{
 

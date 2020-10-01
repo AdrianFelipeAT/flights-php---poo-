@@ -30,24 +30,7 @@
 </head>
 
 <body>
-
   
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-            <button type="button" class="btn btn-danger btn-rounded">
-              <a href="salir"><abbr title="Cerrar Sesión"><i class="fas fa-sign-out-alt text-white"></i></abbr></a></button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    
     <!-- Masthead -->
     <header class="masthead text-white text-center">
 
@@ -63,7 +46,7 @@
 
   </header>
 
-  <section class="py-5">
+  <section class="py-5" id="divinicial" style="display: none;">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 mx-auto">
@@ -71,7 +54,7 @@
                 <!-- CUSTOM BLOCKQUOTE -->
                 <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
                     <div class="blockquote-custom-icon bg-info shadow-sm"><img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" width="20px" height="10px"></div>
-                    <p class="mb-0 mt-2 font-italic center" >RECLAMA TU PREMIO DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b> Y SUMINISTRAR EL SIGUIENTE CÓDIGO: <b class="text-info"><?php echo($_SESSION["codigoseta"])?></b></p>
+                    <p class="mb-0 mt-2 font-italic center" >RECLAMA TU PREMIO DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRAR EL SIGUIENTE ID: <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p> Y SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b></p>
                     <footer class="blockquote-footer pt-4 mt-4 border-top">Recuerde que este código es único e intransferible.
                     </footer>
                 </blockquote><!-- END -->
@@ -80,7 +63,27 @@
         </div>
     </div>
 </section>
+  
+  <div id="myModal" class="modal" role="dialog">
+      <div class="modal-dialog">
 
+        <!-- Modal content-->
+        <div class="modal-content">
+          
+          <div class="modal-body">
+            <img src="vistas/img/premios/premio1.jpg" width="100%" height="100%">
+          </div>
+          
+          </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(window).on('load',function(){
+          $('#myModal').modal('show');
+      });
+    </script>
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-xl-9 mx-auto">
@@ -95,55 +98,55 @@
 
             <form method="post">
               <div class="form-label-group">
-                <input type="text" id="inputText" class="form-control" placeholder="Nombre Completo" required>
-                <label>Nombre Completo</label>
+                <input type="text" name="nombre_completo" class="form-control" placeholder="Nombre Completo" required>
               </div>
 
               <div class="form-label-group">
-                <input type="number" id="inputNumber" class="form-control" placeholder="Correo Electrónico" required>
-                <label for="inputNumber">Número de Cédula</label>
+                <input type="text" name="identificacion" class="form-control" placeholder="Número de identificación" required>
               </div>
               
               <div class="form-label-group">
-                <input type="tel" id="inputTel" class="form-control" placeholder="Número de Teléfono" required>
-                <label for="inputTel">Número de Teléfono</label>
+                <input type="tel" name="celular" class="form-control" placeholder="Número de Teléfono" required>
               </div>
 
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Correo Electrónico" required>
-                <label for="inputEmail">Correo Electrónico</label>
+                <input type="email" name="email" class="form-control" placeholder="Correo Electrónico">
               </div>
  
               <div class="form-label-group">
-            <select data-style="bg-white rounded-pill px-4 py-3 shadow-sm" class="selectpicker w-100">
+                <input type="text" name="fecha_nacimiento" class="form-control" placeholder="Fecha de Nacimiento (dd/mm/yyyy)" required name="fecha">
+              </div>
+              
+              <div class="form-label-group">
+            <select data-style="bg-white rounded-pill px-4 py-3 shadow-sm" class="selectpicker w-100" name="municipio" required>
                 <option value="">Seleccione el Municipio de Residencia</option>
-                <option value="">Manizales</option>
-                <option value="">Aguadas</option>
-                <option value="">Anserma</option>
-                <option value="">Aranzazu</option>
-                <option value="">Belalcázar</option>
-                <option value="">Chinchiná</option>
-                <option value="">Filadelfia</option>
-                <option value="">La Dorada</option>
-                <option value="">La Merced</option>
-                <option value="">Manzanares</option>
-                <option value="">Marmato</option>
-                <option value="">Marquetalia</option>
-                <option value="">Marulanda</option>
-                <option value="">Neira</option>
-                <option value="">Norcasia</option>
-                <option value="">Pácora</option>
-                <option value="">Palestina</option>
-                <option value="">Pensilvania</option>
-                <option value="">Riosucio</option>
-                <option value="">Risaralda</option>
-                <option value="">Salamina</option>
-                <option value="">Samaná</option>
-                <option value="">San José</option>
-                <option value="">Supía</option>
-                <option value="">Victoria</option>
-                <option value="">Villamaría</option>
-                <option value="">Viterbo</option>
+                <option value="Manizales">Manizales</option>
+                <option value="Aguadas">Aguadas</option>
+                <option value="Anserma">Anserma</option>
+                <option value="Aranzazu">Aranzazu</option>
+                <option value="Belalcázar">Belalcázar</option>
+                <option value="Chinchiná">Chinchiná</option>
+                <option value="Filadelfia">Filadelfia</option>
+                <option value="La Dorada">La Dorada</option>
+                <option value="La Merced">La Merced</option>
+                <option value="Manzanares">Manzanares</option>
+                <option value="Marmato">Marmato</option>
+                <option value="Marquetalia">Marquetalia</option>
+                <option value="Marulanda">Marulanda</option>
+                <option value="Neira">Neira</option>
+                <option value="Norcasia">Norcasia</option>
+                <option value="Pácora">Pácora</option>
+                <option value="Palestina">Palestina</option>
+                <option value="Pensilvania">Pensilvania</option>
+                <option value="Riosucio">Riosucio</option>
+                <option value="Risaralda">Risaralda</option>
+                <option value="Salamina">Salamina</option>
+                <option value="Samaná">Samaná</option>
+                <option value="San José">San José</option>
+                <option value="Supía">Supía</option>
+                <option value="Victoria">Victoria</option>
+                <option value="Villamaría">Villamaría</option>
+                <option value="Viterbo">Viterbo</option>
             </select><!-- End -->
               </div>
       <!-- diligencia el formulario para reclamar el bono regalo dejanos tus datos y uan vez lo diligencies te arrojara el codigo para que lo reclames en cualquier punto de venta
@@ -153,26 +156,28 @@
 <!-- https://bootstrapious.com/p/bootstrap-multiselect-dropdown-->
 
 
-              <div class="form-label-group">
-                <input type="date" id="inputDate" class="form-control" placeholder="Fecha de Nacimiento" required name="fecha">
-                <label for="inputDate">Fecha de Nacimiento</label>
-              </div>
-              
               <hr>
-
-              <input type="radio" name="condiciones" required="">&nbsp; &nbsp;He leído y acepto las condiciones de la
-               <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank">
-              Política de Tratamiento de Datos Personales</a>
+              <input type="radio" name="bono" value="acepto" required>&nbsp; &nbsp;Yo acepto el <b>bono regalo</b> de Susuerte.
 
               <br>
 
-              <input type="radio" name="bono" required="">&nbsp; &nbsp;Yo acepto el <b>bono regalo</b> de Susuerte.
+              <input type="radio" name="condiciones" value="acepto" required="">&nbsp; &nbsp;He leído y acepto las condiciones de la
+               <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank">
+              Política de Tratamiento de Datos Personales</a>
+
 
               <br><br>
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Enviar</button>
 
               <br>
+
+              <?php
+
+                $login = new ControladorUsuarios();
+                $login -> ctrActualizacionDatos();
+                
+              ?>
 
               <h5 class="card-title text-center">Nos encuentras en Redes Sociales como:</h5>
               <center>
@@ -192,6 +197,7 @@
       </div>
     </div>
   </div>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

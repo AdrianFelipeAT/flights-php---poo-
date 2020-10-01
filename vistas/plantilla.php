@@ -78,6 +78,7 @@ CUERPO DOCUMENTO
 
       if($_GET["ruta"] == "inicio" ||
          $_GET["ruta"] == "usuarios" ||
+         $_GET["ruta"] == "404" ||
          $_GET["ruta"] == "salir"){
 
         include "modulos/".$_GET["ruta"].".php";
@@ -102,12 +103,18 @@ CUERPO DOCUMENTO
 
     echo '</div>';
 
+  }elseif(isset($_GET["ruta"])){
+
+      if($_GET["ruta"] == "404"){
+
+        include "modulos/".$_GET["ruta"].".php";
+      }
+
   }else{
 
     include "modulos/login.php";
-
+    
   }
-
   ?>
 
 
