@@ -55,8 +55,6 @@
                 <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
                     <div class="blockquote-custom-icon bg-info shadow-sm"><img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" width="20px" height="10px"></div>
                     <p class="mb-0 mt-2 font-italic center" >RECLAMA TU PREMIO DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRAR EL SIGUIENTE ID: <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p> Y SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b></p>
-                    <footer class="blockquote-footer pt-4 mt-4 border-top">Recuerde que este código es único e intransferible.
-                    </footer>
                 </blockquote><!-- END -->
 
             </div>
@@ -106,29 +104,55 @@
             </center><br><br>
 
             <form method="post">
-              <div class="form-label-group">
-                <input type="text" name="nombre_completo" class="form-control" placeholder="Nombre Completo" required>
+            <div class="form-row">
+              <div class="form-label-group col">
+                <input type="text" name="primer_nombre" class="form-control" placeholder="Primer Nombre" required>
               </div>
+              <div class="form-label-group col">
+                <input type="text" name="segundo_nombre" class="form-control" placeholder="Segundo Nombre">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-label-group col">
+                <input type="text" name="primer_apellido" class="form-control" placeholder="Primer Apellido" required>
+              </div>
+              <div class="form-label-group col">
+                <input type="text" name="segundo_apellido" class="form-control" placeholder="Segundo Apellido">
+              </div>
+            </div>
 
               <div class="form-label-group">
                 <input type="text" name="identificacion" class="form-control" placeholder="Número de identificación" required>
               </div>
               
               <div class="form-label-group">
-                <input type="tel" name="celular" class="form-control" placeholder="Número de Teléfono" required>
+                <input type="number" name="celular" class="form-control" placeholder="Número de Teléfono" required>
               </div>
 
               <div class="form-label-group">
                 <input type="email" name="email" class="form-control" placeholder="Correo Electrónico">
               </div>
  
+              <div class="form-row">
+              <div class="form-label-group col">
+                <input type="text" name="fecha_nacimiento" class="form-control" placeholder="Día" required>
+              </div>
+              <div class="form-label-group col">
+                <input type="text" name="fecha_nacimiento" class="form-control" placeholder="Mes" required>
+              </div>
+              <div class="form-label-group col">
+                <input type="text" name="fecha_nacimiento" class="form-control" placeholder="Año" required>
+              </div>
+            </div>
+
               <div class="form-label-group">
                 <input type="text" name="fecha_nacimiento" class="form-control" placeholder="Fecha de Nacimiento (dd/mm/yyyy)" required name="fecha">
               </div>
-              
-              <div class="form-label-group">
-            <select data-style="bg-white rounded-pill px-4 py-3 shadow-sm" class="selectpicker w-100" name="municipio" required>
-                <option value="">Seleccione el Municipio de Residencia</option>
+
+              <div class="form-group">
+             <select class="form-control" id="exampleFormControlSelect1">
+             <option value="">Seleccione el Municipio de Residencia</option>
                 <option value="Manizales">Manizales</option>
                 <option value="Aguadas">Aguadas</option>
                 <option value="Anserma">Anserma</option>
@@ -156,14 +180,8 @@
                 <option value="Victoria">Victoria</option>
                 <option value="Villamaría">Villamaría</option>
                 <option value="Viterbo">Viterbo</option>
-            </select><!-- End -->
-              </div>
-      <!-- diligencia el formulario para reclamar el bono regalo dejanos tus datos y uan vez lo diligencies te arrojara el codigo para que lo reclames en cualquier punto de venta
-    linear-gradient(rgb(237,255,255), rgb(237,255,255))
-  yo acepto el bono regalo de susuerte-->
-            
-<!-- https://bootstrapious.com/p/bootstrap-multiselect-dropdown-->
-
+              </select>
+            </div>
 
               <hr>
               <input type="radio" name="bono" value="acepto" required>&nbsp; &nbsp;Yo acepto el <b>bono regalo</b> de Susuerte.
