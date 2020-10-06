@@ -27,6 +27,9 @@
 </head>
 
 <body>
+
+  
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
@@ -65,6 +68,38 @@
         <!-- Video -->
           <section></section>
 
+
+  <!-- Trigger the modal with a button -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          
+          <div class="modal-body">
+            <p>Some text in the modaS
+
+            DSF
+
+          l
+          <br>
+
+          d
+        .</p>
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+
+  <script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+</script>
 
   <!-- Icons Grid -->
   <section class="features-icons bg-light text-center">
