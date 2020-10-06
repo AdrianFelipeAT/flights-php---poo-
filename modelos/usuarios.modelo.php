@@ -139,9 +139,9 @@ class ModeloUsuarios{
 	ACTUALIZAR DATOS DE USUARIO ( INCERSIÓN EN BASE DE DATOS )
 	==========================================================*/
 
-	static public function mdlActualizarDatosUsuario($tabla, $identificacion, $nombre_completo, $celular, $municipio, $fecha_nacimiento, $correo_electronico, $bono, $condiciones){
+	static public function mdlActualizarDatosUsuario($tabla, $identificacion, $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido, $celular, $municipio, $fecha_nacimiento, $correo_electronico, $bono, $condiciones, $id_codigo){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (identificacion, nombre_completo, celular, correo_electronico, municipio_residencia, fecha_nacimiento, acepto_politica, acepto_regalo) VALUES ('$identificacion', '$nombre_completo', '$celular', '$correo_electronico', '$municipio', '$fecha_nacimiento', '$condiciones', '$bono')");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, celular, correo_electronico, municipio_residencia, fecha_nacimiento, acepto_politica, acepto_regalo, id_codigo) VALUES ('$identificacion', '$primer_nombre', '$segundo_nombre', '$primer_apellido', '$segundo_apellido', '$celular', '$correo_electronico', '$municipio', '$fecha_nacimiento', '$condiciones', '$bono', $id_codigo)");
 
 		if($stmt -> execute()){
 

@@ -62,30 +62,28 @@ class ControladorUsuarios{
 
 	}
 
-	/*=============================================
-	Terminar Sesion
-	=============================================*/
-
-	static public function ctrTerminarSesion($item, $valor){
-
-		$tabla = "codigos";
-
-		$respuesta = ModeloUsuarios::MdlTerminarSesion($tabla, $item, $valor);
-
-		return $respuesta;
-	}
-
 
 	/*=============================================
 	Actualización de datos de cliente estrella
 	=============================================*/
 
 	static public function ctrActualizacionDatos(){
-		if(isset($_POST["nombre_completo"]) and isset($_POST["celular"]) and isset($_POST["identificacion"]) and isset($_POST["municipio"]) and isset($_POST["fecha_nacimiento"]) and isset($_POST["bono"]) and isset($_POST["condiciones"])){
+		if(isset($_POST["primer_nombre"]) and isset($_POST["primer_apellido"]) and isset($_POST["celular"]) and isset($_POST["identificacion"]) and isset($_POST["municipio"]) and isset($_POST["fecha_nacimiento"]) and isset($_POST["bono"]) and isset($_POST["condiciones"])){
 
 			$tabla = "cliente";
 
-			$nombre_completo = $_POST["nombre_completo"];
+			$primer_nombre = $_POST["primer_nombre"];
+			if(isset($_POST["segundo_nombre"])){
+				$segundo_nombre = $_POST["segundo_nombre"];
+			}else{
+				$segundo_nombre = '';
+			}
+			$primer_nombre = $_POST["primer_apellido"];
+			if(isset($_POST["segundo_apellido"])){
+				$segundo_apellido = $_POST["segundo_apellido"];
+			}else{
+				$segundo_apellido = '';
+			}
 			$identificacion = $_POST["identificacion"];
 			$celular = $_POST["celular"];
 			$municipio = $_POST["municipio"];
@@ -98,7 +96,7 @@ class ControladorUsuarios{
 				$correo_electronico = '';
 			}
 
-			$respuesta = ModeloUsuarios::mdlActualizarDatosUsuario($tabla, $identificacion, $nombre_completo, $celular, $municipio, $fecha_nacimiento, $correo_electronico, $bono, $condiciones);
+			$respuesta = ModeloUsuarios::mdlActualizarDatosUsuario($tabla, $identificacion, $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido, $celular, $municipio, $fecha_nacimiento, $correo_electronico, $bono, $condiciones, $_SESSION["id"]);
 
 			if($respuesta == 'ok'){
 				?>
