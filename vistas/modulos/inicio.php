@@ -104,6 +104,7 @@
             </center><br><br>
 
             <form method="post">
+        
             <div class="form-row">
               <div class="form-label-group col">
                 <input type="text" name="primer_nombre" class="form-control" placeholder="Primer Nombre" required>
@@ -122,37 +123,22 @@
               </div>
             </div>
 
-              <div class="form-label-group">
-                <input type="text" name="identificacion" class="form-control" placeholder="Número de identificación" required>
-              </div>
-              
-              <div class="form-label-group">
-                <input type="number" name="celular" class="form-control" placeholder="Número de Teléfono" required>
-              </div>
-
-              <div class="form-label-group">
-                <input type="email" name="email" class="form-control" placeholder="Correo Electrónico">
-              </div>
- 
-              <div class="form-row">
+            <div class="form-row">
               <div class="form-label-group col">
-                <input type="text" name="fecha_nacimiento" class="form-control" placeholder="Día" required>
+              <input type="text" name="identificacion" class="form-control" placeholder="Número de identificación" required>
               </div>
               <div class="form-label-group col">
-                <input type="text" name="fecha_nacimiento" class="form-control" placeholder="Mes" required>
-              </div>
-              <div class="form-label-group col">
-                <input type="text" name="fecha_nacimiento" class="form-control" placeholder="Año" required>
+              <input type="tel" name="celular" class="form-control" placeholder="Número de Teléfono" required>
               </div>
             </div>
 
-              <div class="form-label-group">
-                <input type="text" name="fecha_nacimiento" class="form-control" placeholder="Fecha de Nacimiento (dd/mm/yyyy)" required name="fecha">
+            <div class="form-row">
+              <div class="form-label-group col">
+              <input type="email" name="email" class="form-control" placeholder="Correo Electrónico">
               </div>
-
-              <div class="form-group">
-             <select class="form-control" id="exampleFormControlSelect1">
-             <option value="">Seleccione el Municipio de Residencia</option>
+              <div class="form-label-group col">
+              <select class="form-control">
+                <option value="">Seleccione el Municipio de Residencia</option>
                 <option value="Manizales">Manizales</option>
                 <option value="Aguadas">Aguadas</option>
                 <option value="Anserma">Anserma</option>
@@ -182,6 +168,12 @@
                 <option value="Viterbo">Viterbo</option>
               </select>
             </div>
+            </div>
+
+              <label>Fecha de Nacimiento</label>
+                <div class="form-label-group">
+                  <input class="form-control" type="date">
+                </div>
 
               <hr>
               <input type="radio" name="bono" value="acepto" required>&nbsp; &nbsp;Yo acepto el <b>bono regalo</b> de Susuerte.
