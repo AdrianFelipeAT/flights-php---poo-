@@ -65,9 +65,8 @@ class ModeloUsuarios{
 
 	static public function mdlTerminarSesion($tabla, $item, $valor){
 	
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET generado = 0 WHERE $item = :valor");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET generado = 0 WHERE $item = $valor");
 
-		$stmt -> bindParam(":valor", $valor, PDO::PARAM_STR);
 
 		if($stmt -> execute()){
 
@@ -112,6 +111,30 @@ class ModeloUsuarios{
 
 	}
 
+	/*=============================================
+	Obtener Premio	
+	=============================================*/
+
+	static public function mdlObtenerPremio($tabla, $item){
+
+		if($item != null){
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE codigoacceso= :$item");
+
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+			$stmt -> execute();
+
+			return $stmt -> fetch();
+
+		}
+		
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
 	/*========================================================
 	ACTUALIZAR DATOS DE USUARIO ( INCERSIÓN EN BASE DE DATOS )
 	==========================================================*/

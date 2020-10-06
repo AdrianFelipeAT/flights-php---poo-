@@ -71,7 +71,7 @@
         <div class="modal-content">
           
           <div class="modal-body">
-            <img src="vistas/img/premios/premio1.jpg" width="100%" height="100%">
+            <img src="<?php echo $_SESSION["premio"] ?>.jpg" width="100%" height="100%">
           </div>
           
           </div>
@@ -88,6 +88,15 @@
     <div class="row">
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card card-signin flex-row my-5">
+          <style type="text/css">
+            
+            .card-signin .card-img-left {
+              width: 45%;
+              /* Link to your background image using in the property below! */
+              background: scroll center url('<?php echo($_SESSION["premio"]); ?>-l.jpg');
+              background-size: cover;
+            }
+          </style>
           <div class="card-img-left d-none d-md-flex">
              <!-- Background image premios set in CSS! -->
           </div>

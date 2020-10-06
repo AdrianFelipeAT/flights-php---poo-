@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include '../premios_cliente_estrella/constantes.php';
+include 'constantes.php';
 
 ?>
 
@@ -13,7 +13,7 @@ include '../premios_cliente_estrella/constantes.php';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
-  <title> <?php echo($nombreEmpresa) ?> </title>
+  <title> <?php echo($NOMBREEPMPRESA) ?> </title>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

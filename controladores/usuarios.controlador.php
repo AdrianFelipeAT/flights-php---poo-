@@ -24,6 +24,7 @@ class ControladorUsuarios{
 				$_SESSION["codigoacceso"] = $respuesta["codigoacceso"];
 				$_SESSION["codigoseta"] = $respuesta["codigoseta"];
 				$_SESSION["id_bono_regalo"] = $respuesta["id_bono_regalo"];
+				$_SESSION["premio"] = $respuesta["premio"];
 
 				/*=============================================
 				REGISTRAR ACCESO DEL CÓDIGO
@@ -37,15 +38,15 @@ class ControladorUsuarios{
 
 				//$AccesoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
 
-				if($respuesta['id'] != $codeadm){
+				
 
-					echo '<script>
+				echo '<script>
 
-						window.location = "inicio";
+					window.location = "inicio";
 
-					</script>';
+				</script>';
 
-				}		
+						
 				
 			}else{
 

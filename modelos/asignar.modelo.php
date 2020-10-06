@@ -63,31 +63,6 @@ class ModeloAsignacion{
 
 	}
 
-	/*=============================================
-	EDITAR USUARIO
-	=============================================*/
-
-	static public function mdlTerminarSesion($tabla, $item, $valor){
-	
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET generado = 0 WHERE $item = :valor");
-
-		$stmt -> bindParam(":valor", $valor, PDO::PARAM_STR);
-
-		if($stmt -> execute()){
-
-			return "ok";
-		
-		}else{
-
-			return "error";	
-
-		}
-
-		$stmt -> close();
-
-		$stmt = null;
-
-	}
 
 	/*=============================================
 	EDITAR USUARIO
