@@ -98,8 +98,26 @@
       consultagenerado();
     });
   </script>
-   
-<div class="registration-form">
+
+<?php
+if ($_SESSION['id_producto'] == 1) {
+  ?>
+  <div class="registration-form naranja">
+  <?php
+}else if($_SESSION['id_producto'] == 2){
+  ?>
+  <div class="registration-form azul">
+  <?php
+}else if($_SESSION['id_producto'] == 3){
+  ?>
+  <div class="registration-form gris">
+  <?php
+}else{
+  ?>
+  <div class="registration-form amarillo">
+  <?php
+}
+?>
           
     <form method="post">
             <center>
@@ -182,10 +200,11 @@
 
             <hr>
 
+
             <div class="size orange">
               <input type="radio" name="bono" value="acepto" required>&nbsp; &nbsp;Yo acepto bono regalo de Susuerte.
               <br>
-              <input type="radio" name="condiciones" value="acepto" required="">&nbsp; &nbsp;He leído las <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank" class="orange"> condiciones y restricciones.</a>
+              <input type="radio" name="condiciones" value="acepto" required="">&nbsp; &nbsp;He leído las <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank" class="orange">condiciones y restricciones</a>
             </div>
 
             <div class="form-group">
