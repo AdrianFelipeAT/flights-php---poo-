@@ -77,13 +77,11 @@ CUERPO DOCUMENTO
     if(isset($_GET["ruta"])){
 
       if($_GET["ruta"] == "inicio" ||
-         $_GET["ruta"] == "usuarios" ||
+         $_GET["ruta"] == "consulta" ||
          $_GET["ruta"] == "404" ||
          $_GET["ruta"] == "salir"){
 
         include "modulos/".$_GET["ruta"].".php";
-      }elseif($_GET["ruta"] == "tb76t7b6d2dg0a" and $_SESSION["codigoacceso"] == $codetestsc){
-        include "modulos/seller/venta.php";
       }else{
 
         include "modulos/404.php";
@@ -104,14 +102,12 @@ CUERPO DOCUMENTO
     echo '</div>';
 
   }elseif(isset($_GET["ruta"])){
-
-      if($_GET["ruta"] == "404"){
+      if($_GET["ruta"] == "404" || $_GET["ruta"] == "consulta"){
 
         include "modulos/".$_GET["ruta"].".php";
       }
 
   }else{
-
     include "modulos/login.php";
     
   }

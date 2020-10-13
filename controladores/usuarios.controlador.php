@@ -15,7 +15,7 @@ class ControladorUsuarios{
 			$valor = $_GET["codigo"];
 			$codeadm = 1;
 
-			$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
+			$respuesta = ModeloUsuarios::MdlMostrarCodigos($tabla, $item, $valor);
 
 			if($respuesta["codigoacceso"] == $_GET["codigo"]){
 
@@ -24,22 +24,8 @@ class ControladorUsuarios{
 				$_SESSION["codigoacceso"] = $respuesta["codigoacceso"];
 				$_SESSION["codigoseta"] = $respuesta["codigoseta"];
 				$_SESSION["id_bono_regalo"] = $respuesta["id_bono_regalo"];
-				$_SESSION["premio"] = $respuesta["premio"];
-
-				/*=============================================
-				REGISTRAR ACCESO DEL CÓDIGO
-				=============================================*/
-
-				$item1 = "generado";
-				$valor1 = 1;
-
-				$item2 = "id";
-				$valor2 = $respuesta["id"];
-
-				//$AccesoLogin = ModeloUsuarios::mdlActualizarUsuario($tabla, $item1, $valor1, $item2, $valor2);
-
+				$_SESSION["premio"] = $respuesta["premio"];				
 				
-
 				echo '<script>
 
 					window.location = "inicio";
@@ -60,6 +46,8 @@ class ControladorUsuarios{
 
 		}
 
+
+
 	}
 
 
@@ -68,9 +56,10 @@ class ControladorUsuarios{
 	=============================================*/
 
 	static public function ctrActualizacionDatos(){
-		if(isset($_POST["primer_nombre"]) and isset($_POST["primer_apellido"]) and isset($_POST["celular"]) and isset($_POST["identificacion"]) and isset($_POST["municipio"]) and isset($_POST["fecha_nacimiento"]) and isset($_POST["bono"]) and isset($_POST["condiciones"])){
+		if(isset($_POST["primer_nombre"]) and isset($_POST["primer_apellido"]) and isset($_POST["celular"]) and isset($_POST["identificacion"]) and isset($_POST["municipio"]) and isset($_POST["fecha_nacimiento"]) and isset($_POST["direccion"]) and isset($_POST["bono"]) and isset($_POST["condiciones"])){
 
 			$tabla = "cliente";
+			$tablacodigo = 'codigos';
 
 			$primer_nombre = $_POST["primer_nombre"];
 			if(isset($_POST["segundo_nombre"])){
@@ -78,7 +67,7 @@ class ControladorUsuarios{
 			}else{
 				$segundo_nombre = '';
 			}
-			$primer_nombre = $_POST["primer_apellido"];
+			$primer_apellido = $_POST["primer_apellido"];
 			if(isset($_POST["segundo_apellido"])){
 				$segundo_apellido = $_POST["segundo_apellido"];
 			}else{
@@ -95,16 +84,43 @@ class ControladorUsuarios{
 			}else{
 				$correo_electronico = '';
 			}
+			$direccion = $_POST["direccion"];
 
-			$respuesta = ModeloUsuarios::mdlActualizarDatosUsuario($tabla, $identificacion, $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido, $celular, $municipio, $fecha_nacimiento, $correo_electronico, $bono, $condiciones, $_SESSION["id"]);
+			$respuesta_usuarios = ModeloUsuarios::mdlActualizarDatosUsuario($tabla, $identificacion, $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido, $celular, $municipio, $fecha_nacimiento, $correo_electronico, $bono, $condiciones, $_SESSION["id"], $direccion);
 
-			if($respuesta == 'ok'){
+			$respuesta_generado = ModeloUsuarios::mdlActualizarGenerado($tablacodigo, $_SESSION["id"]);
+			
+			if($respuesta_usuarios == 'ok' and $respuesta_generado == 'ok'){
 				?>
-				<script>
+				<script type="text/javascript">
+					$('#myModalPremio').modal('hide');
+					$('#myModalCodigo').modal('show');
 					var intro = document.getElementById('divinicial');
 					intro.style.display = 'inline';
 				</script>
 				<?php
+				$destinatario = "adrianfelipearroyave@gmail.com"; 
+				$asunto = "Este mensaje es de prueba"; 
+				$cuerpo = ' 
+				<html> 
+				<head> 
+				   <title>Prueba de correo</title> 
+				</head> 
+				<body> 
+				<h1>Hola amigos!</h1> 
+				<p> 
+				<b>Bienvenidos a mi correo electrónico de prueba</b>. Estoy encantado de tener tantos lectores. Este cuerpo del mensaje es del artículo de envío de mails por PHP. Habría que cambiarlo para poner tu propio cuerpo. Por cierto, cambia también las cabeceras del mensaje. 
+				</p> 
+				</body> 
+				</html> 
+				'; 
+
+				//para el envío en formato HTML 
+				$headers = "MIME-Version: 1.0\r\n"; 
+				$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+
+				$mail = mail($destinatario,$asunto,$cuerpo,$headers);
+	
 				echo "<script>
 					</script>";
 				echo '<br>
