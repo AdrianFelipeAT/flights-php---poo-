@@ -8,13 +8,13 @@ class ModeloUsuarios{
 	CONSULTAR INFORMACIÓN DE CÓDIGO
 	=============================================*/
 
-	static public function MdlMostrarCodigos($tabla, $item, $valor){
+	static public function MdlMostrarCodigos($valor){
 
-		if($item != null){
+		if($valor != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM codigos, productos where codigos.id_producto = productos.id and codigos.codigoacceso = :$valor ");
 
-			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+			$stmt -> bindParam(":".$valor, $valor, PDO::PARAM_STR);
 
 			$stmt -> execute();
 

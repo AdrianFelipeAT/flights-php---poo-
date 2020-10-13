@@ -4,6 +4,7 @@ function consultagenerado(){
       dataType: 'html'
   })
   .done(function(respuesta){
+    alert(respuesta)
     if (respuesta == 73832112){
         $('#myModalCodigo').modal('show');
         $('#myModalPremio').modal('hide');

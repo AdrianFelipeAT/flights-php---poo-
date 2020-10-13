@@ -15,7 +15,7 @@ class ControladorUsuarios{
 			$valor = $_GET["codigo"];
 			$codeadm = 1;
 
-			$respuesta = ModeloUsuarios::MdlMostrarCodigos($tabla, $item, $valor);
+			$respuesta = ModeloUsuarios::MdlMostrarCodigos($valor);
 
 			if($respuesta["codigoacceso"] == $_GET["codigo"]){
 
@@ -24,7 +24,8 @@ class ControladorUsuarios{
 				$_SESSION["codigoacceso"] = $respuesta["codigoacceso"];
 				$_SESSION["codigoseta"] = $respuesta["codigoseta"];
 				$_SESSION["id_bono_regalo"] = $respuesta["id_bono_regalo"];
-				$_SESSION["premio"] = $respuesta["premio"];				
+				$_SESSION["popup"] = $respuesta["popup_imagen"];
+				$_SESSION["fondo"] = $respuesta["fondo_imagen"];			
 				
 				echo '<script>
 

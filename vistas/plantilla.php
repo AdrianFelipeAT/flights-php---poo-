@@ -102,7 +102,7 @@ CUERPO DOCUMENTO
     echo '</div>';
 
   }elseif(isset($_GET["ruta"])){
-      if($_GET["ruta"] == "404" || $_GET["ruta"] == "consulta"){
+      if($_GET["ruta"] == "404"){
 
         include "modulos/".$_GET["ruta"].".php";
       }

@@ -100,6 +100,7 @@
 
   <script type="text/javascript">
     $(window).on('load',function(){
+      alert("hola");
       consultagenerado();
     });
   </script>
