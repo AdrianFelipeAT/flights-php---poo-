@@ -12,7 +12,7 @@ class ModeloUsuarios{
 
 		if($valor != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM codigos, productos where codigos.id_producto = productos.id and codigos.codigoacceso = :$valor ");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM codigos, productos where codigos.id_producto_f = productos.id_producto_p and codigos.codigoacceso = :$valor ");
 
 			$stmt -> bindParam(":".$valor, $valor, PDO::PARAM_STR);
 

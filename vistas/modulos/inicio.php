@@ -34,18 +34,14 @@
 
 </head>
     
-<body>
+<body style="background-image: url('<?php echo $_SESSION["fondo"] ?>'); background-repeat: no-repeat;
+      background-size: 100% 100%;">
 
   <style type="text/css">
     html {
       height: 100%;
     }
-    .registration-form{
-      padding: 10px 0;
-      background-image: url('<?php echo $_SESSION["fondo"] ?>');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-    }
+    
     
   </style>
   <section class="py-5" id="divinicial" style="display: none;">
@@ -69,7 +65,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
-        <img src="<?php echo $_SESSION["premio"] ?>.jpg" width="100%" height="100%">
+        <img src="<?php echo $_SESSION["popup"] ?>" width="100%" height="100%">
       </div>
     </div>
   </div>
@@ -97,10 +93,8 @@
       </div>
     </div>
   </div>
-
   <script type="text/javascript">
     $(window).on('load',function(){
-      alert("hola");
       consultagenerado();
     });
   </script>
@@ -131,29 +125,29 @@
 
             <div class="form-row">
               <div class="form-group col">
-                    <input type="text" class="form-control item" placeholder="Número de Identificación">
+                    <input type="text" class="form-control item" name="identificacion" placeholder="Número de Identificación">
               </div>
               <div class="form-group col">
-                  <input type="text" class=" fecha" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" id="tel" placeholder="Número de Teléfono">
+                  <input type="text" name="celular" class=" fecha" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" id="tel" placeholder="Número de Teléfono">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col">
-                    <input type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" class="fecha datepicker" id="fecha" placeholder="&nbsp;Fecha de Nacimiento (DD/MM/AAAA)" required>
+                    <input type="text" name="fecha_nacimiento" pattern="\d{1,2}/\d{1,2}/\d{4}" class="fecha datepicker" id="fecha" placeholder="&nbsp;Fecha de Nacimiento (DD/MM/AAAA)" required>
               </div>
               <div class="form-group col">
-                  <input type="text" class="form-control item" placeholder="Dirección de Residencia" required name="direccion">
+                  <input type="text" class="form-control item" placeholder="Dirección de Residencia" name="direccion" required>
               </div>
             </div>
             
             <div class="form-row">
               <div class="form-group col">
-                <input type="email" class="form-control item" placeholder="Correo Electrónico" required>
+                <input type="email" name="email" class="form-control item" placeholder="Correo Electrónico" required>
               </div>
      
               <div class="form-label-group col">
-                <select class="form-control" required>
+                <select class="form-control" name="municipio" required>
                   <option value="" class="size">Seleccione el Municipio de Residencia</option>
                   <option value="Manizales">Manizales</option>
                   <option value="Aguadas">Aguadas</option>
@@ -225,7 +219,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="assets/js/script.js"></script>
      <!-- Bootstrap core JavaScript -->
-     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script  src="vistas/js/funciones.js"></script>
 </body>
 </html>

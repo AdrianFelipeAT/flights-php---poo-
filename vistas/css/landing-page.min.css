@@ -38,6 +38,10 @@ h5{
   color: white;
 }
 
+.registration-form{
+      padding: 10px 0;
+     
+    }
 .registration-form form{
     background-color: rgb(240, 147, 48);
     max-width: 600px;
