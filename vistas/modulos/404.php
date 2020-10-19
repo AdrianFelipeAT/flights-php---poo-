@@ -12,7 +12,7 @@
         <div class="notfound-404">
           <h1>404</h1>
           <h2>El código no es válido</h2>
-        </div>}
+        </div>
         <br><br>
       </div>
     </div>

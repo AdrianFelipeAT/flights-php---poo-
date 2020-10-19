@@ -1,10 +1,32 @@
-
-
 body{
     background: #ff0606;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     }
 
+    main {
+        flex: 1 0 auto;
+    }
+      
+    /* Menu - profile */
+    .bg-card-user {
+        background-image: url(https://www.susuerte.com/wp-content/uploads/2020/09/POPART.jpg);
+        padding: 15px 0;
+        border-radius:20px;
+        padding-bottom: 0;
+        height: 70%;
+    }
+    
+    .login {
+        width: 50%;
+        margin: 0 auto;
+        background-color:rgb(240, 147, 48);
+        padding: 20px;
+        margin-bottom:-10%;
+        margin-top:3%;
+    }
 
 h2{
      font-size: 35px;
@@ -38,33 +60,27 @@ h5{
 }
 
 .registration-form{
-      padding: 10px 0;
-     
+      padding: 60px 0; 
     }
-.naranja form{
 
+.naranja form{
     background-color: rgb(240, 147, 48);
 }
 
 .azul form{
-
     background-color: blue;
 }
 
 .gris form{
-
     background-color: gray;
 }
 
-.amarillo form{
 
-    background-color: yellow;
-}
 .registration-form form{
     max-width: 600px;
     margin: auto;
     padding: 25px 50px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+    box-shadow: 37px 32px 7px rgba(0, 0, 0, 0.075);
     margin-top: 3%;
 }
 
@@ -112,31 +128,25 @@ h5{
     max-width: 30%;
     background-color: #fff;
     margin: auto;
-    padding: 5px 0;
     text-align: center;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    color: #9fadca;
-    border-top: 1px solid #dee9ff;
+    border-top: 2px solid #dee9ff;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
-    margin-right: 25.8%;
-    display: contents;
+    display: table-cell;
 }
 
 .registration-form .social-icons{
-    margin-bottom: 47px;
-    margin-left: 360px;
-    margin-top: 2px;
+    margin-bottom: 4px;
+    margin-left: 15px;
+    margin-top: 4px;
+    margin-right: 18px;
 }
 
 .registration-form .social-icons a{
-    font-size: 23px;
-    margin: 0 3px;
-    color: #5691ff;
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    background-color: #fff;
+  
+    margin: 0 5px;
+    color: #0e3a8a;
     line-height: 4px;
     font-size: larger;
 }
@@ -171,4 +181,11 @@ h5{
 
 .letter{
     font-family: fantasy;
+}
+
+.follow{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: medium;
+    margin-bottom: -6px;
 }

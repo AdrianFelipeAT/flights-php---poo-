@@ -81,9 +81,9 @@
                     <div class="row">
 
                             <!-- CUSTOM BLOCKQUOTE -->
-                            <blockquote class="">
+                            <blockquote>
                                 <div class="blockquote-custom-icon bg-info shadow-sm"><img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" width="20px" height="10px"></div>
-                                <p class="" ><h2>HAS DILIGENCIADO TUS DATOS CORRECTAMENTE. </h2><br><br> RECLAMA TU PREMIO DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRA EL SIGUIENTE ID: <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p> Y SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b> <br> Válido para Caldas</p>
+                                <p><h2>HAS DILIGENCIADO TUS DATOS CORRECTAMENTE. </h2><br><br> RECLAMA TU PREMIO DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRA EL SIGUIENTE ID: <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p> Y EL SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b> <br> Válido para Caldas</p>
                             </blockquote><!-- END -->
 
                     </div>
@@ -118,9 +118,13 @@ if ($_SESSION['id_producto'] == 1) {
   <?php
 }
 ?>
-          
-    <form method="post">
-            <center>
+
+    <div class="container">
+        <div class="row"><br>
+          <div class="col m8 s8 offset-m2 offset-s2 center">
+            <div class="truncate bg-card-user"> 
+              <form method="post" class="login">
+              <center>
             <h2 class="strong">DILIGENCIA Y GANA</h2>
             </center>
             <div class="form-row">
@@ -213,9 +217,16 @@ if ($_SESSION['id_producto'] == 1) {
           
 
               <img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" alt="aniversario" width="20%" class="anniversary">
-              <h5>Síguenos</h5>
+              <h5 class="follow">Síguenos</h5>
               <img src=" https://www.susuerte.com/wp-content/uploads/2020/06/precio.png" alt="25 años" width="20%" class="years">
 
+              <div class="social-media">  
+                  <div class="social-icons">
+                      <a href="https://www.facebook.com/Susuerte?fref=ts" class="letter"><i class="icon-social-facebook"></i><i>SUSUERTE</i></a>
+                      <a href="https://www.instagram.com/susuerte/" class="letter"><i class="icon-social-instagram"></i><i> SUSUERTE</i></a>
+                      <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" class="letter"><i class="icon-social-youtube"></i><i> SUSUERTE S.A</i></a>
+                  </div>
+              </div>
 
           <?php
 
@@ -224,16 +235,14 @@ if ($_SESSION['id_producto'] == 1) {
 
           ?>
 
-          </form>
-
-        <div class="social-media">
-            <div class="social-icons">
-                <a href="https://www.facebook.com/Susuerte?fref=ts" class="letter"><i class="icon-social-facebook"></i>SUSUERTE</a>
-                <a href="https://www.instagram.com/susuerte/" class="letter"><i class="icon-social-instagram"></i> SUSUERTE</a>
-                <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" class="letter"><i class="icon-social-youtube"></i><i> SUSUERTE S.A</i></a>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+    <!-- fin del .container -->
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="assets/js/script.js"></script>
@@ -241,5 +250,10 @@ if ($_SESSION['id_producto'] == 1) {
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script  src="vistas/js/funciones.js"></script>
+
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="mySpxript.js"></script>
 </body>
 </html>
