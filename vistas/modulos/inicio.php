@@ -123,7 +123,7 @@ if ($_SESSION['id_producto'] == 1) {
         <div class="row"><br>
           <div class="col m8 s8 offset-m2 offset-s2 center">
             <div class="truncate bg-card-user"> 
-              <form method="post" class="login">
+              <form method="post" class="logueo">
               <center>
             <h2 class="strong">DILIGENCIA Y GANA</h2>
             </center>
