@@ -122,7 +122,27 @@ if ($_SESSION['id_producto'] == 1) {
     <div class="container">
         <div class="row"><br>
           <div class="col m8 s8 offset-m2 offset-s2 center">
-            <div class="truncate bg-card-user"> 
+     
+<?php
+if ($_SESSION['id_producto'] == 1) {
+  ?>
+ <div class="truncate bg-card-user"> 
+  <?php
+}else if($_SESSION['id_producto'] == 2){
+  ?>
+ <div class="truncate bg-card-user">  
+  <?php
+}else if($_SESSION['id_producto'] == 3){
+  ?>
+ <div class="truncate bg-card-user"> 
+  <?php
+}else{
+  ?>
+ <div class="truncate bg-card-user"> 
+  <?php
+}
+?>
+
               <form method="post" class="logueo">
               <center>
             <h2 class="strong">DILIGENCIA Y GANA</h2>
@@ -220,14 +240,6 @@ if ($_SESSION['id_producto'] == 1) {
               <h5 class="follow">Síguenos</h5>
               <img src=" https://www.susuerte.com/wp-content/uploads/2020/06/precio.png" alt="25 años" width="20%" class="years">
 
-              <div class="social-media">  
-                  <div class="social-icons">
-                      <a href="https://www.facebook.com/Susuerte?fref=ts" class="letter"><i class="icon-social-facebook"></i><i>SUSUERTE</i></a>
-                      <a href="https://www.instagram.com/susuerte/" class="letter"><i class="icon-social-instagram"></i><i> SUSUERTE</i></a>
-                      <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" class="letter"><i class="icon-social-youtube"></i><i> SUSUERTE S.A</i></a>
-                  </div>
-              </div>
-
           <?php
 
             $login = new ControladorUsuarios();
@@ -236,6 +248,13 @@ if ($_SESSION['id_producto'] == 1) {
           ?>
 
               </form>
+            <div class="social-media">  
+                  <div class="social-icons">
+                      <a href="https://www.facebook.com/Susuerte?fref=ts" class="letter"><i class="icon-social-facebook"></i><i>SUSUERTE</i></a>
+                      <a href="https://www.instagram.com/susuerte/" class="letter"><i class="icon-social-instagram"></i><i> SUSUERTE</i></a>
+                      <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" class="letter"><i class="icon-social-youtube"></i><i> SUSUERTE S.A</i></a>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
