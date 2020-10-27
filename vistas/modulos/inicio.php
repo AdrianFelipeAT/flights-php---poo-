@@ -37,10 +37,8 @@
 <body style="background-image: url('<?php echo $_SESSION["fondo"] ?>'); background-repeat: no-repeat;
       background-size: 100% 100%;">
 
-  <style type="text/css">
-    html {
-      height: 100%;
-    }
+  <style>
+    
     
     
   </style>
@@ -120,30 +118,12 @@ if ($_SESSION['id_producto'] == 1) {
 ?>
 
     <div class="container">
-        <div class="row"><br>
+        <div class="row">
           <div class="col m8 s8 offset-m2 offset-s2 center">
-     
-<?php
-if ($_SESSION['id_producto'] == 1) {
-  ?>
- <div class="truncate bg-card-user"> 
-  <?php
-}else if($_SESSION['id_producto'] == 2){
-  ?>
- <div class="truncate bg-card-user">  
-  <?php
-}else if($_SESSION['id_producto'] == 3){
-  ?>
- <div class="truncate bg-card-user"> 
-  <?php
-}else{
-  ?>
- <div class="truncate bg-card-user"> 
-  <?php
-}
-?>
+   
+            <div class="truncate bg-card-user" style="background-image: url('<?php echo $_SESSION["fondo_formulario"] ?>'); background-repeat: no-repeat; background-size: 100% 100%;">
 
-              <form method="post" class="logueo">
+            <form method="post" class="logueo">
               <center>
             <h2 class="strong">DILIGENCIA Y GANA</h2>
             </center>
@@ -236,9 +216,9 @@ if ($_SESSION['id_producto'] == 1) {
             </div>
           
 
-              <img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" alt="aniversario" width="20%" class="anniversary">
+              <img src="vistas/img/plantilla/aniversario_cinta.png" alt="aniversario" width="48%" class="anniversary">
               <h5 class="follow">Síguenos</h5>
-              <img src=" https://www.susuerte.com/wp-content/uploads/2020/06/precio.png" alt="25 años" width="20%" class="years">
+              <img src="vistas/img/plantilla/aniversario_25.png" alt="25 años" width="20%" class="years">
 
           <?php
 
@@ -248,6 +228,9 @@ if ($_SESSION['id_producto'] == 1) {
           ?>
 
               </form>
+
+            
+
             <div class="social-media">  
                   <div class="social-icons">
                       <a href="https://www.facebook.com/Susuerte?fref=ts" class="letter"><i class="icon-social-facebook"></i><i>SUSUERTE</i></a>
@@ -258,10 +241,10 @@ if ($_SESSION['id_producto'] == 1) {
             </div>
           </div>
         </div>
+    <img src="vistas/img/plantilla/text.png" width="50%">
       </div>
     </div>
     <!-- fin del .container -->
-
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="assets/js/script.js"></script>

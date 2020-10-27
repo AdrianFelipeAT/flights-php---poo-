@@ -26,6 +26,7 @@ class ControladorUsuarios{
 				$_SESSION["id_bono_regalo"] = $respuesta["id_bono_regalo"];
 				$_SESSION["popup"] = $respuesta["popup_imagen"];
 				$_SESSION["fondo"] = $respuesta["fondo_imagen"];			
+				$_SESSION["fondo_formulario"] = $respuesta["fondo_form"];			
 				$_SESSION["id_producto"] = $respuesta["id_producto_f"];			
 				
 				echo '<script>

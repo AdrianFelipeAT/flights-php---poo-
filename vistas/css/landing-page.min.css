@@ -4,15 +4,17 @@ body{
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    }
 
+    }
+html {
+      height: 100%;
+    }
     main {
         flex: 1 0 auto;
     }
       
     /* Menu - profile */
     .bg-card-user {
-        background-image: url(https://www.susuerte.com/wp-content/uploads/2020/09/POPART.jpg);
         box-shadow: 37px 32px 7px rgba(0, 0, 0, 0.075);
         padding: 15px 0;
         border-radius:20px;
@@ -73,7 +75,7 @@ h5{
 }
 
 .gris form{
-    background-color: gray;
+    background-color: #70D6F9;
 }
 
 
@@ -126,6 +128,19 @@ h5{
 }
 
 .registration-form .social-media{
+    max-width: 30%;
+    background-color: #fff;
+    margin: auto;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top: 2px solid #dee9ff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+    margin-top: -21%;
+    margin-right: 23%;
+}
+
+.registration-form .social-text{
     max-width: 30%;
     background-color: #fff;
     margin: auto;
