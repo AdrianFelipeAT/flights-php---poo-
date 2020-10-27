@@ -1,7 +1,6 @@
 <?php
 
-$NOMBREEPMPRESA = "Premios Cliente Estrella"; 
+$NOMBREEPMPRESA = "Bono Regalos"; 
 $CODETESTSC = "45hj9";
-
 
 ?>

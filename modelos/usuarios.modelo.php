@@ -5,16 +5,16 @@ require_once "conexion.php";
 class ModeloUsuarios{
 
 	/*=============================================
-	MOSTRAR USUARIOS
+	CONSULTAR INFORMACIÓN DE CÓDIGO
 	=============================================*/
 
-	static public function mdlMostrarUsuarios($tabla, $item, $valor){
+	static public function MdlMostrarCodigos($valor){
 
-		if($item != null){
+		if($valor != null){
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM codigos, productos where codigos.id_producto_f = productos.id_producto_p and codigos.codigoacceso = :$valor ");
 
-			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+			$stmt -> bindParam(":".$valor, $valor, PDO::PARAM_STR);
 
 			$stmt -> execute();
 
@@ -59,15 +59,36 @@ class ModeloUsuarios{
 
 	}
 
+	/*============================================================
+	SE CONSULTA EL ESTADO DE UN CÓDIGO
+	==============================================================*/
+
+	static public function mdlConsultaEstadoGenerado($idcodigo){
+		if($idcodigo != null){
+
+			$stmt = Conexion::conectar()->prepare("SELECT generado FROM codigos WHERE id = $idcodigo");
+
+			$stmt -> execute();
+
+			return $stmt -> fetch();
+
+		}
+		
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
 	/*=============================================
-	EDITAR USUARIO
+	EDITAR GESTIÓN DE BONO
 	=============================================*/
 
-	static public function mdlTerminarSesion($tabla, $item, $valor){
+	static public function mdlActualizarGenerado($tabla, $valor){
 	
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET generado = 0 WHERE $item = :valor");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET generado = 73832112 WHERE id = $valor");
 
-		$stmt -> bindParam(":valor", $valor, PDO::PARAM_STR);
 
 		if($stmt -> execute()){
 
@@ -112,20 +133,37 @@ class ModeloUsuarios{
 
 	}
 
+	/*=============================================
+	Obtener Premio	
+	=============================================*/
+
+	static public function mdlObtenerPremio($tabla, $item){
+
+		if($item != null){
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE codigoacceso= :$item");
+
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+			$stmt -> execute();
+
+			return $stmt -> fetch();
+
+		}
+		
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
 	/*========================================================
 	ACTUALIZAR DATOS DE USUARIO ( INCERSIÓN EN BASE DE DATOS )
 	==========================================================*/
 
-	static public function mdlActualizarDatosUsuario($tabla, $identificacion, $nombres, $apellidos, $celular, $municipio, $correo_electronico){
+	static public function mdlActualizarDatosUsuario($tabla, $identificacion, $primer_nombre, $segundo_nombre, $primer_apellido, $segundo_apellido, $celular, $municipio, $fecha_nacimiento, $correo_electronico, $bono, $condiciones, $id_codigo, $direccion){
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (identificacion, nombres, apellidos, celular, correo_electronico, municipio_residencia) VALUES (:$identificacion, :$nombres, :$apellidos, :$celular, :$correo_electronico, :$municipio)");
-
-		$stmt -> bindParam(":".$identificacion, $identificacion, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$nombres, $nombres, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$apellidos, $apellidos, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$celular, $celular, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$correo_electronico, $correo_electronico, PDO::PARAM_STR);
-		$stmt -> bindParam(":".$municipio, $municipio, PDO::PARAM_STR);
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, celular, correo_electronico, municipio_residencia, fecha_nacimiento, acepto_politica, acepto_regalo, id_codigo, direccion) VALUES ('$identificacion', '$primer_nombre', '$segundo_nombre', '$primer_apellido', '$segundo_apellido', '$celular', '$correo_electronico', '$municipio', '$fecha_nacimiento', '$condiciones', '$bono', $id_codigo, '$direccion')");
 
 		if($stmt -> execute()){
 

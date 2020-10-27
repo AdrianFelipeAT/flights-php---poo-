@@ -8,10 +8,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Sábado Fest</title>
+  <title>Premios Cliente Estrella</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="vistas/img/plantilla/logo_susuerte.png">
+  <link rel="icon" href="vistas/img/plantilla/favicon.png">
+
+  <!-- Popup -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   <!-- Bootstrap core CSS -->
   <link href="vistas/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,252 +26,236 @@
 
   <!-- Custom styles for this template -->
   <link href="vistas/css/landing-page.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-
   
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="salir">Cerrar Sesión</a>
-              
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+</head>
     
-    <!-- Masthead -->
-    <header class="masthead text-white text-center">
-      
-      <div class="overlay"></div>
-      <div class="container">
+<body style="background-image: url('<?php echo $_SESSION["fondo"] ?>'); background-repeat: no-repeat;
+      background-size: 100% 100%;">
+
+  <style>
+    
+    
+    
+  </style>
+  <section class="py-5" id="divinicial" style="display: none;">
+    <div class="container">
         <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5"><?php echo($_SESSION["codigoseta"])?></h1>
-          </div>
+            <div class="col-lg-6 mx-auto">
+
+                <!-- CUSTOM BLOCKQUOTE -->
+                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                    <div class="blockquote-custom-icon bg-info shadow-sm"><img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" width="20px" height="10px"></div>
+                    <p class="mb-0 mt-2 font-italic center" >RECLAMA TU PREMIO DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRAR EL SIGUIENTE ID: <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p> Y SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b></p>
+                </blockquote><!-- END -->
+
+            </div>
         </div>
-      </div>
-      <div class="wave" style="height: 300px; overflow: hidden;">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-          <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill:#f8f9fa;">
-          </path>
-        </svg>
-      </div>
-        </header>
-        
-        <!-- Video -->
-          <section></section>
-
-
-  <!-- Trigger the modal with a button -->
-
-    <!-- Modal -->
-    <div id="myModal" class="modal" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          
-          <div class="modal-body">
-            <p>Some text in the modaS
-
-            DSF
-
-          l
-          <br>
-
-          d
-        .</p>
-          </div>
-          
-        </div>
-
+    </div>
+</section>
+  
+<div id="myModalPremio" class="modal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <img src="<?php echo $_SESSION["popup"] ?>" width="100%" height="100%">
       </div>
     </div>
+  </div>
+</div>
 
+  <div id="myModalCodigo" class="modal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+            <section class="py-5" id="divinicial">
+                <div class="container">
+                    <div class="row">
+
+                            <!-- CUSTOM BLOCKQUOTE -->
+                            <blockquote>
+                                <div class="blockquote-custom-icon bg-info shadow-sm"><img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" width="20px" height="10px"></div>
+                                <p><h2>HAS DILIGENCIADO TUS DATOS CORRECTAMENTE. </h2><br><br> RECLAMA TU PREMIO DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRA EL SIGUIENTE ID: <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p> Y EL SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b> <br> Válido para Caldas</p>
+                            </blockquote><!-- END -->
+
+                    </div>
+                </div>
+            </section>
+        </div>
+      </div>
+    </div>
+  </div>
   <script type="text/javascript">
     $(window).on('load',function(){
-        $('#myModal').modal('show');
+      consultagenerado();
     });
-</script>
+  </script>
 
-  <!-- Icons Grid -->
-  <section class="features-icons bg-light text-center">
+<?php
+if ($_SESSION['id_producto'] == 1) {
+  ?>
+  <div class="registration-form naranja">
+  <?php
+}else if($_SESSION['id_producto'] == 2){
+  ?>
+  <div class="registration-form azul">
+  <?php
+}else if($_SESSION['id_producto'] == 3){
+  ?>
+  <div class="registration-form gris">
+  <?php
+}else{
+  ?>
+  <div class="registration-form amarillo">
+  <?php
+}
+?>
+
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fab fa-itunes-note m-auto text-danger"></i>
+        <div class="row">
+          <div class="col m8 s8 offset-m2 offset-s2 center">
+   
+            <div class="truncate bg-card-user" style="background-image: url('<?php echo $_SESSION["fondo_formulario"] ?>'); background-repeat: no-repeat; background-size: 100% 100%;">
+
+            <form method="post" class="logueo">
+              <center>
+            <h2 class="strong">DILIGENCIA Y GANA</h2>
+            </center>
+            <div class="form-row">
+              <div class="form-group col">
+                  <input type="text" class="form-control item" placeholder="Primer Nombre" required name="primer_nombre">
+              </div>
+              <div class="form-group col">
+                  <input type="text" class="form-control item" placeholder="Segundo Nombre" name="segundo_nombre">
+              </div>
             </div>
-            <h3>SUS GRANDES ÉXITOS</h3>
-            <p class="lead mb-0">
-              &sdot; Pensando en ella
-              &sdot; Sólo yo 
-              <br>
-              &sdot; Volverás a mí
-              &sdot; A lo moderno
-              <br>
-              &sdot; El bus
-              &sdot; Música Ligera
-              <br>
-              &sdot; Enseñame a mentir 
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fas fa-guitar m-auto text-danger"></i>
+
+            <div class="form-row">
+              <div class="form-group col">
+                  <input type="text" class="form-control item" placeholder="Primer Apellido" required name="primer_apellido">
+              </div>
+              <div class="form-group col">
+                  <input type="text" class="form-control item" placeholder="Segundo Apellido" name="segundo_apellido">
+              </div>
             </div>
-            <h3>MEJORES</h3>
-            <p class="lead mb-0">...</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="fas fa-headset m-auto text-danger"></i>
+
+            <div class="form-row">
+              <div class="form-group col">
+                    <input type="text" class="form-control item" name="identificacion" placeholder="Número de Identificación">
+              </div>
+              <div class="form-group col">
+                  <input type="text" name="celular" class=" fecha" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" id="tel" placeholder="Número de Teléfono">
+              </div>
             </div>
-            <h3>CANCIONES</h3>
-            <p class="lead mb-0">...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Image Showcases -->
-  <section class="showcase">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
+            <div class="form-row">
+              <div class="form-group col">
+                    <input type="text" name="fecha_nacimiento" pattern="\d{1,2}/\d{1,2}/\d{4}" class="fecha datepicker" id="fecha" placeholder="&nbsp;Fecha de Nacimiento (DD/MM/AAAA)" required>
+              </div>
+              <div class="form-group col">
+                  <input type="text" class="form-control item" placeholder="Dirección de Residencia" name="direccion" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group col">
+                <input type="email" name="email" class="form-control item" placeholder="Correo Electrónico" required>
+              </div>
+     
+              <div class="form-label-group col">
+                <select class="form-control" name="municipio" required>
+                  <option value="" class="size">Seleccione el Municipio de Residencia</option>
+                  <option value="Manizales">Manizales</option>
+                  <option value="Aguadas">Aguadas</option>
+                  <option value="Anserma">Anserma</option>
+                  <option value="Aranzazu">Aranzazu</option>
+                  <option value="Belalcázar">Belalcázar</option>
+                  <option value="Chinchiná">Chinchiná</option>
+                  <option value="Filadelfia">Filadelfia</option>
+                  <option value="La Dorada">La Dorada</option>
+                  <option value="La Merced">La Merced</option>
+                  <option value="Manzanares">Manzanares</option>
+                  <option value="Marmato">Marmato</option>
+                  <option value="Marquetalia">Marquetalia</option>
+                  <option value="Marulanda">Marulanda</option>
+                  <option value="Neira">Neira</option>
+                  <option value="Norcasia">Norcasia</option>
+                  <option value="Pácora">Pácora</option>
+                  <option value="Palestina">Palestina</option>
+                  <option value="Pensilvania">Pensilvania</option>
+                  <option value="Riosucio">Riosucio</option>
+                  <option value="Risaralda">Risaralda</option>
+                  <option value="Salamina">Salamina</option>
+                  <option value="Samaná">Samaná</option>
+                  <option value="San José">San José</option>
+                  <option value="Supía">Supía</option>
+                  <option value="Victoria">Victoria</option>
+                  <option value="Villamaría">Villamaría</option>
+                  <option value="Viterbo">Viterbo</option>
+                </select>
+              </div>
+            </div>
 
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('vistas/img/plantilla/yelsid.jpeg');"></div>
-        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>YELSID</h2>
-          <p class="lead mb-0">La voz de la calle</p>
-        </div>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-6 text-white showcase-img" style="background-image: url('vistas/img/plantilla/song1.jpg');"></div>
-        <div class="col-lg-6 my-auto showcase-text">
-          <p class="lead mb-0">Yelcid Arbey Osorio Hurtado,(7 de septiembre de 1979, Medellín-Antioquia) conocido artísticamente como "Yelsid" La Voz De La Calle, es un cantante colombiano de reggaeton. Nació en la ciudad de Medellin-Colombia. Ahora mismo esta siendo muy reconocido en Paraguay, Argentina, Chile, y otros países latinoamericanos.</p>
-        </div>
-      </div>
-  </section>
+            <hr>
 
-  <!-- Testimonials -->
-  <section class="testimonials text-center bg-light">
-    <div class="container">
-      <form method="post">
 
-      <div class="form-group has-feedback">
+            <div class="size orange">
+              <input type="radio" name="bono" value="acepto" required>&nbsp; &nbsp;Yo acepto bono regalo de Susuerte.
+              <br>
+              <input type="radio" name="condiciones" value="acepto" required="">&nbsp; &nbsp;He leído las <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank" class="orange">condiciones y restricciones</a>
+            </div>
 
-        <input type="text" class="form-control" placeholder="Identificacion" name="identificacion" required>
-        <input type="text" class="form-control" placeholder="Nombres" name="nombres" required>
-        <input type="text" class="form-control" placeholder="Apellidos" name="apellidos" required>
-        <input type="text" class="form-control" placeholder="Número de celular" name="celular" required>
-        <input type="text" class="form-control" placeholder="Número de cédula" name="cedula" required>
-        <input type="text" class="form-control" placeholder="Municipio" name="municipio" required>
-        <input type="text" class="form-control" placeholder="Correo Electrónico" name="email" required>
-
-      </div>
-
-      <div class="row">
-       
-        <div class="center">
-
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
-        
-        </div>
-
-      </div>
-
-      <?php
-
-        $login = new ControladorUsuarios();
-        $login -> ctrActualizacionDatos();
-        
-      ?>
-
-    </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
-          <ul class="list-inline mb-2">
-            <li class="list-inline-item">
-              <a href="https://www.susuerte.com/" target="_blank">Susuerte S.A</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Términos y Condiciones</a>
-            </li>
-          </ul>
-          <p class="text-muted small mb-4 mb-lg-0">
-            NIT.810.000317 - 8
-            <br>
-            Calle 21 No. 22 - 16
-            <br>
-            ISO / IEC 27001 - ISO 9001
-            <br>
-            +57 (6) 897 14 99 ext. 237
-            <br>
-            Línea de atención al cliente
-            <br>
-            Manizales - Caldas - Colombia
-            <br>
-            PBX: +57 (6) 897 14 99 / Fax ext. 242
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account">ENVIAR</button>
+            </div>
           
-            Línea de Resultados 897 78 78 - 883 00 90
-            <br>
-            &copy;2020. Todos los Derechos Reservados.</p>
+
+              <img src="vistas/img/plantilla/aniversario_cinta.png" alt="aniversario" width="48%" class="anniversary">
+              <h5 class="follow">Síguenos</h5>
+              <img src="vistas/img/plantilla/aniversario_25.png" alt="25 años" width="20%" class="years">
+
+          <?php
+
+            $login = new ControladorUsuarios();
+            $login -> ctrActualizacionDatos();
+
+          ?>
+
+              </form>
+
+            
+
+            <div class="social-media">  
+                  <div class="social-icons">
+                      <a href="https://www.facebook.com/Susuerte?fref=ts" class="letter"><i class="icon-social-facebook"></i><i>SUSUERTE</i></a>
+                      <a href="https://www.instagram.com/susuerte/" class="letter"><i class="icon-social-instagram"></i><i> SUSUERTE</i></a>
+                      <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" class="letter"><i class="icon-social-youtube"></i><i> SUSUERTE S.A</i></a>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item">
-              <a href="https://www.facebook.com/Susuerte?fref=ts" target="_blank">
-                <i class="fab fa-facebook fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.instagram.com/susuerte/" target="_blank">
-                <i class="fab fa-instagram fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" target="_blank">
-                <i class="fab fa-youtube fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://api.whatsapp.com/send?phone=310 497 93 79" target="_blank">
-                <i class="fab fa-whatsapp fa-2x fa-fw"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
+    <img src="vistas/img/plantilla/text.png" width="50%">
       </div>
     </div>
-  </footer>
+    <!-- fin del .container -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/script.js"></script>
+     <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script  src="vistas/js/funciones.js"></script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <!-- jQuery first, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="mySpxript.js"></script>
 </body>
-
 </html>

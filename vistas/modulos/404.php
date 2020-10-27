@@ -1,49 +1,22 @@
-<div class="content-wrapper">
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <!-- Theme style -->
+  <link rel="stylesheet" href="vistas/dist/css/404.css">
+</head>
+<body>
 
-  <section class="content-header">
-    
-    <h1>
-      
-      Página no encontrada
-    
-    </h1>
-
-    <ol class="breadcrumb">
-      
-      <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      
-      <li class="active">Página no encontrada</li>
-    
-    </ol>
-
-  </section>
-
-  <section class="content">
-
-    <div class="error-page">
-      
-      <h2 class="headline text-primary">404</h2> 
-
-      <div class="error-content">
-
-        <h3>
-
-          <i class="fa fa-warning text-primary"></i> 
-
-          Ooops! Página no encontrada.
-
-        </h3>
-
-        <p>
-        
-           Ingresa al menú lateral y allí podrás encontrar las páginas disponibles. También puedes regresar haciendo <a href="inicio">click aquí.</a>
-        
-        </p>
-
+  <div id="notfound">
+      <div class="notfound">
+        <div class="notfound-404">
+          <h1>404</h1>
+          <h2>El código no es válido</h2>
+        </div>
+        <br><br>
       </div>
+    </div>
 
-    </div>  
+</body>
+</html>
 
-  </section>
-
-</div>
