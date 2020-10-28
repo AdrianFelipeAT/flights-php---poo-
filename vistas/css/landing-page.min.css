@@ -85,6 +85,7 @@ h5{
     padding: 6px 31px;
     margin-top: 4%;
     margin-bottom: 16.8%;
+    margin-right: 23%;
 }
 
 .registration-form .form-icon{
@@ -205,6 +206,20 @@ h5{
     width: 50%;
     margin-top: -5%;
     margin-left: 3%;
+}
+
+.colormodal{
+ background-color: rgba(251, 235, 79);    
+}
+
+.contenido_texto{
+    color:#2f2a7d;
+}
+
+
+.otra{
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 /*Estilos para Tablet*/

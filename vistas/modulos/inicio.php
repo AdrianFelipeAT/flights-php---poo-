@@ -34,7 +34,7 @@
 
 </head>
     
-<body style="background-image: url('<?php echo $_SESSION["fondo"] ?>'); background-repeat: no-repeat;
+<body style="background-image: url('<?php echo $_SESSION["fondo"] ?>');
       background-size: 100% 100%;">
 
   <style>
@@ -48,10 +48,27 @@
             <div class="col-lg-6 mx-auto">
 
                 <!-- CUSTOM BLOCKQUOTE -->
-                <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-                    <h1><b>RECLAMA TU BONOREGALO DE GIRO</b></h1> <p class="mb-0 mt-2 font-italic center">DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRAR EL SIGUIENTE ID: <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p> Y SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b></p>
-                    <br> Descarga la app <a class="text-info" href="https://play.google.com/store/apps/details?id=co.com.supergiros.movil">SuperGiros Móvil</a></p>
-                </blockquote><!-- END -->
+                            <blockquote class="p-5 colormodal contenido_texto">
+                                <p align="center">
+                                  <center>
+                                    <h2><b>RECLAMA TU BONO REGALO DE GIROS EN CUALQUIER SUSUERTE DEL DEPARTAMENTO</b></h2>
+                                    <p class="mb-0 mt-2 font-italic center">Suministrando el siguiente ID: 
+                                      <b>
+                                        <p style="font-size: 250%"> <?php echo($_SESSION["id_bono_regalo"])?></p>
+                                      </b>
+                                    </p>
+                                     Y Código: <br>
+                                      <b>
+                                        <p style="font-size: 250%"> <?php echo($_SESSION["codigoseta"])?></p>
+                                      </b>
+                                    </p>
+                                     
+                                      <br> Descarga la app <a class="text-info" href="https://play.google.com/store/apps/details?id=co.com.supergiros.movil" target="_blank">SuperGiros Móvil</a>
+                                      <br><br>
+                                      <img src="vistas/img/plantilla/modal_foot.png" width="100%">
+                                  </center>
+                                </p>
+                            </blockquote><!-- END -->
 
             </div>
         </div>
@@ -63,6 +80,9 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         <img src="<?php echo $_SESSION["popup"] ?>" style="width:100%; height:100%;" >
       </div>
     </div>
@@ -70,29 +90,42 @@
 </div>
 
   <div id="myModalCodigo" class="modal" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog otra">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-body">
-            <section id="divinicial">
+            <section id="divinicial" class="colormodal">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
                
               
 
                             <!-- CUSTOM BLOCKQUOTE -->
-                            <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-                                <h4>HAS DILIGENCIADO TUS DATOS CORRECTAMENTE</h4>
-                                <br><br><p align="justify"><b>
-                                  <h2><b>RECLAMA TU BONOREGALO DE GIRO</b></h2>
-                                  <p class="mb-0 mt-2 font-italic center">DIIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRA EL SIGUIENTE ID: 
-                                  <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p>
-                                   Y EL SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b>
-                                    <br> Descarga la app <a class="text-info" href="https://play.google.com/store/apps/details?id=co.com.supergiros.movil" target="_blank">SuperGiros Móvil</a></p>
+                            <blockquote class="p-5 colormodal contenido_texto">
+                                <p align="center">
+                                  <center>
+                                    <h2><b>RECLAMA TU BONO REGALO DE GIROS EN CUALQUIER SUSUERTE DEL DEPARTAMENTO</b></h2>
+                                    <p class="mb-0 mt-2 font-italic center">Suministrando el siguiente ID: 
+                                      <b>
+                                        <p style="font-size: 250%"> <?php echo($_SESSION["id_bono_regalo"])?></p>
+                                      </b>
+                                    </p>
+                                     Y Código: <br>
+                                      <b>
+                                        <p style="font-size: 250%"> <?php echo($_SESSION["codigoseta"])?></p>
+                                      </b>
+                                    </p>
+                                     
+                                      <br> Descarga la app <a class="text-info" href="https://play.google.com/store/apps/details?id=co.com.supergiros.movil" target="_blank">SuperGiros Móvil</a>
+                                      <br><br>
+                                      <img src="vistas/img/plantilla/modal_foot.png" width="100%">
+                                  </center>
+                                </p>
                             </blockquote><!-- END -->
 
                     
          
             </section>
-        </div>
       </div>
     </div>
   </div>
@@ -212,7 +245,9 @@ if ($_SESSION['id_producto'] == 1) {
 
               <input type="radio" name="bono" value="acepto" required class="orange">&nbsp; &nbsp;Yo acepto bono regalo de Susuerte.
               <br>
-              <input type="radio" name="condiciones" value="acepto" required="" class="size">&nbsp; &nbsp;<u><b>He leído y aceptado</u></b> <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank" class="orange"> las condiciones y restricciones</a>
+              <input type="radio" name="condiciones" value="acepto" required="" class="size">&nbsp; &nbsp; 
+
+              <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank" class=""> He leído y acepto las condiciones y restricciones</a>
 
             <div class="form-group">
                 <button type="submit" class="btn btn-block create-account">ENVIAR</button>
@@ -233,11 +268,11 @@ if ($_SESSION['id_producto'] == 1) {
               </form>
           </div>
           <div class="social-media">  
-                  <div class="social-icons">
+                  <!--<div class="social-icons">
                       <a href="https://www.facebook.com/Susuerte?fref=ts" class="letter"><i class="icon-social-facebook"></i><i>SUSUERTE</i></a>
                       <a href="https://www.instagram.com/susuerte/" class="letter"><i class="icon-social-instagram"></i><i> SUSUERTE</i></a>
                       <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" class="letter"><i class="icon-social-youtube"></i><i> SUSUERTE S.A</i></a>
-                  </div>
+                  </div>-->
           </div>
         </div>
       </div>
