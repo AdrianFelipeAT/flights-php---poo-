@@ -49,8 +49,8 @@
 
                 <!-- CUSTOM BLOCKQUOTE -->
                 <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
-                    <div class="blockquote-custom-icon bg-info shadow-sm"><img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" width="20px" height="10px"></div>
-                    <p class="mb-0 mt-2 font-italic center" >RECLAMA TU PREMIO DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRAR EL SIGUIENTE ID: <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p> Y SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b></p>
+                    <h1><b>RECLAMA TU BONOREGALO DE GIRO</b></h1> <p class="mb-0 mt-2 font-italic center">DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRAR EL SIGUIENTE ID: <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p> Y SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b></p>
+                    <br> Descarga la app <a class="text-info" href="https://play.google.com/store/apps/details?id=co.com.supergiros.movil">SuperGiros Móvil</a></p>
                 </blockquote><!-- END -->
 
             </div>
@@ -63,7 +63,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
-        <img src="<?php echo $_SESSION["popup"] ?>" width="100%" height="100%">
+        <img src="<?php echo $_SESSION["popup"] ?>" style="width:100%; height:100%;" >
       </div>
     </div>
   </div>
@@ -74,18 +74,23 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-body">
-            <section class="py-5" id="divinicial">
-                <div class="container">
-                    <div class="row">
+            <section id="divinicial">
+               
+              
 
                             <!-- CUSTOM BLOCKQUOTE -->
-                            <blockquote>
-                                <div class="blockquote-custom-icon bg-info shadow-sm"><img src="https://www.susuerte.com/wp-content/uploads/2020/09/CALDAS.png" width="20px" height="10px"></div>
-                                <p><h2>HAS DILIGENCIADO TUS DATOS CORRECTAMENTE. </h2><br><br> RECLAMA TU PREMIO DIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRA EL SIGUIENTE ID: <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p> Y EL SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b> <br> Válido para Caldas</p>
+                            <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
+                                <h4>HAS DILIGENCIADO TUS DATOS CORRECTAMENTE</h4>
+                                <br><br><p align="justify"><b>
+                                  <h2><b>RECLAMA TU BONOREGALO DE GIRO</b></h2>
+                                  <p class="mb-0 mt-2 font-italic center">DIIRIGIENDOTE A CUALQUIER PUNTO DE VENTA <b>SUSUERTE</b>, SUMINISTRA EL SIGUIENTE ID: 
+                                  <b class="text-info"><h2><?php echo($_SESSION["id_bono_regalo"])?></h2></b></p>
+                                   Y EL SIGUIENTE CÓDIGO: <b class="text-info"><h2><?php echo($_SESSION["codigoseta"])?></h2></b>
+                                    <br> Descarga la app <a class="text-info" href="https://play.google.com/store/apps/details?id=co.com.supergiros.movil" target="_blank">SuperGiros Móvil</a></p>
                             </blockquote><!-- END -->
 
-                    </div>
-                </div>
+                    
+         
             </section>
         </div>
       </div>
@@ -127,48 +132,48 @@ if ($_SESSION['id_producto'] == 1) {
               <center>
             <h2 class="strong">DILIGENCIA Y GANA</h2>
             </center>
-            <div class="form-row">
-              <div class="form-group col">
+            <div class="form-group">
+              <div class="form-group">
                   <input type="text" class="form-control item" placeholder="Primer Nombre" required name="primer_nombre">
               </div>
-              <div class="form-group col">
+              <div class="form-group">
                   <input type="text" class="form-control item" placeholder="Segundo Nombre" name="segundo_nombre">
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="form-group col">
+            <div class="form-group">
+              <div class="form-group">
                   <input type="text" class="form-control item" placeholder="Primer Apellido" required name="primer_apellido">
               </div>
-              <div class="form-group col">
+              <div class="form-group">
                   <input type="text" class="form-control item" placeholder="Segundo Apellido" name="segundo_apellido">
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="form-group col">
+            <div class="form-group">
+              <div class="form-group">
                     <input type="text" class="form-control item" name="identificacion" placeholder="Número de Identificación">
               </div>
-              <div class="form-group col">
+              <div class="form-group">
                   <input type="text" name="celular" class=" fecha" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" id="tel" placeholder="Número de Teléfono">
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="form-group col">
+            <div class="form-group">
+              <div class="form-group">
                     <input type="text" name="fecha_nacimiento" pattern="\d{1,2}/\d{1,2}/\d{4}" class="fecha datepicker" id="fecha" placeholder="&nbsp;Fecha de Nacimiento (DD/MM/AAAA)" required>
               </div>
-              <div class="form-group col">
+              <div class="form-group">
                   <input type="text" class="form-control item" placeholder="Dirección de Residencia" name="direccion" required>
               </div>
             </div>
             
-            <div class="form-row">
-              <div class="form-group col">
+            <div class="form-group">
+              <div class="form-group">
                 <input type="email" name="email" class="form-control item" placeholder="Correo Electrónico" required>
               </div>
      
-              <div class="form-label-group col">
+              <div class="form-label-group">
                 <select class="form-control" name="municipio" required>
                   <option value="" class="size">Seleccione el Municipio de Residencia</option>
                   <option value="Manizales">Manizales</option>
@@ -205,11 +210,9 @@ if ($_SESSION['id_producto'] == 1) {
             <hr>
 
 
-            <div class="size orange">
-              <input type="radio" name="bono" value="acepto" required>&nbsp; &nbsp;Yo acepto bono regalo de Susuerte.
+              <input type="radio" name="bono" value="acepto" required class="orange">&nbsp; &nbsp;Yo acepto bono regalo de Susuerte.
               <br>
-              <input type="radio" name="condiciones" value="acepto" required="">&nbsp; &nbsp;He leído las <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank" class="orange">condiciones y restricciones</a>
-            </div>
+              <input type="radio" name="condiciones" value="acepto" required="" class="size">&nbsp; &nbsp;<u><b>He leído y aceptado</u></b> <a href="https://www.susuerte.com/wp-content/uploads/2020/03/MCC-DE-15-Politica-de-Tratamiento-de-Datos-Personales-V.2.pdf" target="_blank" class="orange"> las condiciones y restricciones</a>
 
             <div class="form-group">
                 <button type="submit" class="btn btn-block create-account">ENVIAR</button>
@@ -217,7 +220,7 @@ if ($_SESSION['id_producto'] == 1) {
           
 
               <img src="vistas/img/plantilla/aniversario_cinta.png" alt="aniversario" width="48%" class="anniversary">
-              <h5 class="follow">Síguenos</h5>
+              <h5 class="follow">.</h5>
               <img src="vistas/img/plantilla/aniversario_25.png" alt="25 años" width="20%" class="years">
 
           <?php
@@ -228,20 +231,17 @@ if ($_SESSION['id_producto'] == 1) {
           ?>
 
               </form>
-
-            
-
-            <div class="social-media">  
+          </div>
+          <div class="social-media">  
                   <div class="social-icons">
                       <a href="https://www.facebook.com/Susuerte?fref=ts" class="letter"><i class="icon-social-facebook"></i><i>SUSUERTE</i></a>
                       <a href="https://www.instagram.com/susuerte/" class="letter"><i class="icon-social-instagram"></i><i> SUSUERTE</i></a>
                       <a href="https://www.youtube.com/channel/UCOGgfTd9tBDTYYDIdg9ct2w/videos" class="letter"><i class="icon-social-youtube"></i><i> SUSUERTE S.A</i></a>
                   </div>
-              </div>
-            </div>
           </div>
         </div>
-    <img src="vistas/img/plantilla/text.png" width="50%">
+      </div>
+    <img src="vistas/img/plantilla/text.png" class="direction">
       </div>
     </div>
     <!-- fin del .container -->

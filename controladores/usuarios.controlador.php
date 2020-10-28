@@ -127,7 +127,11 @@ class ControladorUsuarios{
 				echo "<script>
 					</script>";
 				echo '<br>
-						<div class="alert alert-success">Formualrio enviado correctamente</div>';	
+						<div class="alert alert-success">
+						Formulario enviado correctamente
+						<br>
+						RECLAMA TU BONOREGALO DE GIRO
+						</div>';	
 
 			}else{
 
