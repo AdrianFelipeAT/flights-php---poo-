@@ -142,6 +142,14 @@ class ControladorUsuarios{
 		
 	}
 
+	static public function ctrObtenerReporte(){
+
+		$respuesta = ModeloUsuarios::MdlObtenerReporte();
+
+		return $respuesta;
+
+	}	
+
 }
 	
 

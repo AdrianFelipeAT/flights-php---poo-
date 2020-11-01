@@ -77,7 +77,6 @@ CUERPO DOCUMENTO
     if(isset($_GET["ruta"])){
 
       if($_GET["ruta"] == "inicio" ||
-         $_GET["ruta"] == "consulta" ||
          $_GET["ruta"] == "404" ||
          $_GET["ruta"] == "salir"){
 
@@ -101,6 +100,8 @@ CUERPO DOCUMENTO
 
     echo '</div>';
 
+  }else if($_GET["ruta"] == "45egy78h"){
+    include "modulos/reportes/".$_GET["ruta"].".php";
   }elseif(isset($_GET["ruta"])){
       if($_GET["ruta"] == "404"){
 
@@ -109,7 +110,6 @@ CUERPO DOCUMENTO
 
   }else{
     include "modulos/login.php";
-    
   }
   ?>
 

@@ -181,4 +181,32 @@ class ModeloUsuarios{
 
 	}
 
+
+	/*=============================================
+	MOSTRAR USUARIOS
+	=============================================*/
+
+	static public function mdlObtenerReporte(){
+
+			$stmt = Conexion::conectar()->prepare("SELECT identificacion, primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, celular, correo_electronico, municipio_residencia, fecha_nacimiento, acepto_politica, acepto_regalo, direccion, fecha, codigos.codigoseta as codigo_seguridad, codigos.id_bono_regalo as id_transaccion, productos.producto, codigos.tipo_cliente FROM `cliente`, `codigos`, `productos` where cliente.id_codigo = codigos.id and codigos.id_producto_f = productos.id_producto_p");
+
+			//$stmt -> bindParam(":premios", $premios, PDO::PARAM_STR);
+
+			if($stmt -> execute()){
+
+				return $stmt -> fetchAll();
+			
+			}else{
+
+				return $stmt;	
+
+			}
+
+			$stmt -> close();
+
+			$stmt = null;
+		
+
+	}
+
 }

@@ -35,7 +35,11 @@
 </head>
     
 <body style="background-image: url('<?php echo $_SESSION["fondo"] ?>');
-      background-size: 100% 100%;">
+background-repeat: no-repeat;
+    background-size: 150% 150%;
+    background-position: center top;
+    background-attachment: fixed;
+      ">
 
   <style>
     
@@ -52,18 +56,22 @@
                                 <p align="center">
                                   <center>
                                     <h2><b>RECLAMA TU BONO REGALO DE GIROS EN CUALQUIER SUSUERTE DEL DEPARTAMENTO</b></h2>
-                                    <p class="mb-0 mt-2 font-italic center">Suministrando el siguiente ID: 
+                                    <p class="mb-0 mt-2 font-italic center">Suministrando el siguiente ID de transacción: 
                                       <b>
                                         <p style="font-size: 250%"> <?php echo($_SESSION["id_bono_regalo"])?></p>
                                       </b>
                                     </p>
-                                     Y Código: <br>
+                                     Y código de seguridad: <br>
                                       <b>
                                         <p style="font-size: 250%"> <?php echo($_SESSION["codigoseta"])?></p>
                                       </b>
                                     </p>
                                      
-                                      <br> Descarga la app <a class="text-info" href="https://play.google.com/store/apps/details?id=co.com.supergiros.movil" target="_blank">SuperGiros Móvil</a>
+                                      <br>
+                                      Válido para Caldas
+                                      <br><br> Descarga la app <a class="text-info" href="https://play.google.com/store/apps/details?id=co.com.supergiros.movil" target="_blank">SuperGiros Móvil</a>
+                                       <br><br>
+                                      Vigente hasta el 31 de Diciembre de 2020
                                       <br><br>
                                       <img src="vistas/img/plantilla/modal_foot.png" width="100%">
                                   </center>
@@ -105,18 +113,22 @@
                                 <p align="center">
                                   <center>
                                     <h2><b>RECLAMA TU BONO REGALO DE GIROS EN CUALQUIER SUSUERTE DEL DEPARTAMENTO</b></h2>
-                                    <p class="mb-0 mt-2 font-italic center">Suministrando el siguiente ID: 
+                                    <p class="mb-0 mt-2 font-italic center">Suministrando el siguiente ID de transacción: 
                                       <b>
                                         <p style="font-size: 250%"> <?php echo($_SESSION["id_bono_regalo"])?></p>
                                       </b>
                                     </p>
-                                     Y Código: <br>
+                                     Y código de seguridad: <br>
                                       <b>
                                         <p style="font-size: 250%"> <?php echo($_SESSION["codigoseta"])?></p>
                                       </b>
                                     </p>
                                      
-                                      <br> Descarga la app <a class="text-info" href="https://play.google.com/store/apps/details?id=co.com.supergiros.movil" target="_blank">SuperGiros Móvil</a>
+                                      <br>
+                                      Válido para Caldas
+                                      <br><br> Descarga la app <a class="text-info" href="https://play.google.com/store/apps/details?id=co.com.supergiros.movil" target="_blank">SuperGiros Móvil</a>
+                                       <br><br>
+                                      Vigente hasta el 31 de Diciembre de 2020
                                       <br><br>
                                       <img src="vistas/img/plantilla/modal_foot.png" width="100%">
                                   </center>
