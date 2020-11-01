@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include 'constantes.php';
+include '../searchflights/constantes.php';
 
 ?>
 
@@ -12,53 +12,107 @@ include 'constantes.php';
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-
-  <title> <?php echo($NOMBREEPMPRESA) ?> </title>
+  <title> <?php echo($NAME) ?> </title>
 
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-  <link rel="icon" href="vistas/img/plantilla/x.png">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="icon" href="">
+
    <!--=====================================
   PLUGINS DE CSS
   ======================================-->
 
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="vistas/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
-
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="vistas/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="vistas/bower_components/Ionicons/css/ionicons.min.css">
 
   <!-- Theme style -->
   <link rel="stylesheet" href="vistas/dist/css/AdminLTE.css">
-
   
-  <!-- CSS login-->
+  <!-- AdminLTE Skins -->
+  <link rel="stylesheet" href="vistas/dist/css/skins/_all-skins.min.css">
 
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/animate.css">
-  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/hamburgers.min.css">
-  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/material-design-iconic-font.min.css">
-  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/animsition.min.css">
-  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/select2.min.css">
-  <link rel="stylesheet" type="text/css" href="vistas/plantilla_css/daterangepicker.css">
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+   <!-- DataTables -->
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="vistas/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="vistas/plugins/iCheck/all.css">
+
+   <!-- Daterange picker -->
+  <link rel="stylesheet" href="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+
+
+  <!--=====================================
+  PLUGINS DE JAVASCRIPT
+  ======================================-->
+
+  <!-- jQuery 3 -->
+  <script src="vistas/bower_components/jquery/dist/jquery.min.js"></script>
   
+  <!-- Bootstrap 3.3.7 -->
+  <script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- FastClick -->
+  <script src="vistas/bower_components/fastclick/lib/fastclick.js"></script>
+  
+  <!-- AdminLTE App -->
+  <script src="vistas/dist/js/adminlte.min.js"></script>
+
+  <!-- DataTables -->
+  <script src="vistas/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
+  <script src="vistas/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
+
+  <!-- SweetAlert 2 -->
+  <script src="vistas/plugins/sweetalert2/sweetalert2.all.js"></script>
+   <!-- By default SweetAlert2 doesn't support IE. To enable IE 11 support, include Promise polyfill:-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+  <!-- iCheck 1.0.1 -->
+  <script src="vistas/plugins/iCheck/icheck.min.js"></script>
+
+  <!-- InputMask -->
+  <script src="vistas/plugins/input-mask/jquery.inputmask.js"></script>
+  <script src="vistas/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+  <script src="vistas/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
+  <!-- jQuery Number -->
+  <script src="vistas/plugins/jqueryNumber/jquerynumber.min.js"></script>
+
+  <!-- daterangepicker http://www.daterangepicker.com/-->
+  <script src="vistas/bower_components/moment/min/moment.min.js"></script>
+  <script src="vistas/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Morris.js charts http://morrisjs.github.io/morris.js/-->
+  <script src="vistas/bower_components/raphael/raphael.min.js"></script>
+
+  <!-- ChartJS http://www.chartjs.org/-->
+  <script src="vistas/bower_components/Chart.js/Chart.js"></script>
+
+
+
+
 </head>
 
 <!--=====================================
 CUERPO DOCUMENTO
 ======================================-->
 
-<body class="hold-transition skin-blue sidebar-collapse sidebar-mini login-page">
+<body>
  
   <?php
-  if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
 
-   echo '<div class="wrapper">';
+
 
     /*=============================================
     CABEZOTE
@@ -73,57 +127,21 @@ CUERPO DOCUMENTO
     /*=============================================
     CONTENIDO
     =============================================*/
-
-    if(isset($_GET["ruta"])){
-
-      if($_GET["ruta"] == "inicio" ||
-         $_GET["ruta"] == "404" ||
-         $_GET["ruta"] == "salir"){
-
-        include "modulos/".$_GET["ruta"].".php";
-      }else{
-
-        include "modulos/404.php";
-
-      }
-
-    }else{
-
-      include "modulos/inicio.php";
-
-    }
+    include "modulos/flights.php";
 
     /*=============================================
     FOOTER
     =============================================*/
 
 
-    echo '</div>';
 
-  }else if($_GET["ruta"] == "45egy78h"){
-    include "modulos/reportes/".$_GET["ruta"].".php";
-  }elseif(isset($_GET["ruta"])){
-      if($_GET["ruta"] == "404"){
+  
 
-        include "modulos/".$_GET["ruta"].".php";
-      }
-
-  }else{
-    include "modulos/login.php";
-  }
   ?>
 
 
-<!--SCRIPT login-->
-  <script src="vistas/plantilla_css/jquery/jquery-3.2.1.min.js"></script>
-	<script src="vistas/plantilla_css/jquery/animsition.min.js"></script>
-	<script src="vistas/plantilla_css/jquery/popper.js"></script>
-	<script src="vistas/plantilla_css/jquery/bootstrap.min.js"></script>
-	<script src="vistas/plantilla_css/jquery/select2.min.js"></script>
-	<script src="vistas/plantilla_css/jquery/moment.min.js"></script>
-	<script src="vistas/plantilla_css/jquery/daterangepicker.js"></script>
-	<script src="vistas/plantilla_css/jquerycountdowntime.js"></script>
-	<script src="vistas/plantilla_css/jquery/main.js"></script>
+<script src="vistas/js/plantilla.js"></script>
+<script src="vistas/js/flights.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,11 @@
+Error: Undefined variable: rrr in /opt/lampp/htdocs/searchflights/vistas/modulos/flights.php at 109
+Error: Undefined variable: rrr in /opt/lampp/htdocs/searchflights/vistas/modulos/flights.php at 109
+Error: Undefined variable: rsrr in /opt/lampp/htdocs/searchflights/vistas/modulos/flights.php at 109
+Error: Undefined variable: PATH in /opt/lampp/htdocs/searchflights/vistas/plantilla.php at 4
+Warning: include(/constantes.php): failed to open stream: No existe el archivo o el directorio in /opt/lampp/htdocs/searchflights/vistas/plantilla.php at 4
+Warning: include(): Failed opening '/constantes.php' for inclusion (include_path='.:/opt/lampp/lib/php') in /opt/lampp/htdocs/searchflights/vistas/plantilla.php at 4
+Error: Undefined variable: NAME in /opt/lampp/htdocs/searchflights/vistas/plantilla.php at 15
+Error: Undefined variable: rsrr in /opt/lampp/htdocs/searchflights/vistas/modulos/flights.php at 109
+Error: Undefined variable: rsrr in /opt/lampp/htdocs/searchflights/vistas/modulos/flights.php at 109
+Error: Undefined variable: rsrr in /opt/lampp/htdocs/searchflights/vistas/modulos/flights.php at 109
+Error: Undefined variable: rsrr in /opt/lampp/htdocs/searchflights/vistas/modulos/flights.php at 109
